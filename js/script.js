@@ -3,22 +3,33 @@
 const art = [
     {
         id: 1,
+        year: 1853-1936,
         title: "En erindring efter Danmarks største martyr",
         artist: "Frits Albert Florintinus Strand",
         material: "Olie på lærred",
         size: "56x49 cm",
+        about portrait: "Hans billeder var enkle og højtidelige og viser optrin, hvor han ofte selv er omdrejningspunkt. I hans billeder er fortællingen vigtigere end den teknisk korrekte fremstilling. Motiverne er glade og spontane.",
+        about artist: "Han var optaget af døden, særligt sin egen, og ville begraves i en lang diplomatfrakke.",
+        psychiatry: "Frits Alberts Florentinus Strand var indlagt på psykiatrisk hospital i 29 år (1907-1936). Alkohol var en af årsagerne til han ikke kunne være hjemme hos sin kone.",
     },
     {
         id: 2,
+        year: 1946-,
         title: "ingen titel",
         artist: "Jette Hansen",
         material: "Olie på lærred",
+        about portrait: "Typisk for Jette Hansen er en manglende respekt for værkets kant. Genstande og figurer bliver brat afskåret af billedrammen, som om historierne fylder langt mere, end der er plads til. Værkernes univers er flydende og figurerne forholder sig ikke til lodret og vandret.",
+        psychiatry: "Jette Hansen blev syg i 1968, og indlagt på Psykiatrisk Hospital i Risskov, hvor hun var i 4 år. I 1989 begyndte hun på Gallo-skolen til tegning og maleri. Dette blev et vendepunkt i hendes liv, og hun blev psykisk mere stabil.",
     },
     {
         id: 3,
+        year: 1942-2008,
         title: "ingen titel",
         artist: "Marie Heiberg",
         material: "Olie på lærred",
+        about portrait: "En del af maleriernes figurer er kendetegnet ved klovneagtige træk. Figurerne optræder i forskellige sammenhænge ofte i et spændingsfelt mellem tristhed og håb. Hendes værker er dramatiske, men også følsomme. De udtrykker en sart tristhed en gennemgående melankoli, der forstærkes af hendes blå univers.",
+        about artist: "Hun var en dygtig maler, uddannet violinist og sanger i et kor.",
+        psychiatry: "Marie Heiberg har malet en del malerier først i 1970’erne i forbindelse med psykisk sygdom og indlæggelse.",
     },
     {
         id: 4,
