@@ -8,3 +8,21 @@
     blockquote { font-family: var(--font-family); font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } 
     pre { font-family: var(--font-family); font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.57143px; }
 }
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 20px;
+}
+.galley {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.painting {
+    width: 200px; 
+    height: auto;
+    border: 2px solid var(--text-color);
