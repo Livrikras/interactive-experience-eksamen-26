@@ -15,7 +15,7 @@ const art = [
     },
     {
         id: 2,
-        year: 1946-,
+        year:"1946-",
         title: "ingen titel",
         artist: "Jette Hansen",
         material: "Olie på lærred",
