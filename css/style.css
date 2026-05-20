@@ -1,6 +1,6 @@
 :root {
-    --background-color: #4B4B4B;
-    --text-color: #F5F5F5;
+    --background-color: #564a45;    
+    --text-color: #2A2A2A;
     --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     h1 { font-family: var(--font-family); font-size: 24px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px; }
     h3 { font-family: var(--font-family); font-size: 14px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 15.4px; } 
@@ -10,23 +10,43 @@
 }
 
 body {
-    background-color: #564A45;
+    background-color: var(--background-color);
     color: var(--text-color);
     font-family: var(--font-family);
     margin: 0;
     padding: 20px;
 }
-.galley {
+.gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
 }
 .painting {
-    width: 200px; 
-    height: auto;
-    border: 5px solid #F8C554;
-    
-
-
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
 }
+
+.card{
+    background: #F8C554;
+    border: 5px solid #F8C554;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 5px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: 0.3s;
+    width: 200px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4), 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px; 
+    text-transform: uppercase;
+}
+
