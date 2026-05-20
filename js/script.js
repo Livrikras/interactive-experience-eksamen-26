@@ -8,7 +8,7 @@ const art = [
         artist: "Frits Albert Florintinus Strand",
         material: "Olie på lærred",
         size: "56x49 cm",
-        Image: "img/frits-albert-florintinus-strand.png",
+        Image: "img/frits-albert-florentinus-strand.png",
         portrait: "Hans billeder var enkle og højtidelige og viser optrin, hvor han ofte selv er omdrejningspunkt. I hans billeder er fortællingen vigtigere end den teknisk korrekte fremstilling. Motiverne er glade og spontane.",
         about: "Han var optaget af døden, særligt sin egen, og ville begraves i en lang diplomatfrakke.",
         psychiatry: "Frits Alberts Florentinus Strand var indlagt på psykiatrisk hospital i 29 år (1907-1936). Alkohol var en af årsagerne til han ikke kunne være hjemme hos sin kone.",
