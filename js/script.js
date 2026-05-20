@@ -3,7 +3,7 @@
 const art = [
     {
         id: 1,
-        year: 1853-1936,
+        year: "1853-1936",
         title: "En erindring efter Danmarks største martyr",
         artist: "Frits Albert Florentinus Strand",
         material: "Olie på lærred",
@@ -25,7 +25,7 @@ const art = [
     },
     {
         id: 3,
-        year: 1942-2008,
+        year: "1942-2008",
         title: "ingen titel",
         artist: "Marie Heiberg",
         material: "Olie på lærred",
@@ -36,7 +36,7 @@ const art = [
     },
     {
         id: 4,
-        year: 1951-2012,
+        year: "1951-2012",
         title: "Portræt",
         artist: "Ole Norge",
         material: "Oliekridt",
@@ -48,7 +48,7 @@ const art = [
     },
     {
         id: 5,
-        year: 1951-1986,
+        year: "1951-1986",
         title: "Luder og Madonna",
         artist: "Patrick Larsen",
         material: "Acryl og oliekridt",
