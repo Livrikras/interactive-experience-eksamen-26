@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: #564A45;
     color: var(--text-color);
     font-family: var(--font-family);
     margin: 0;
@@ -25,4 +25,8 @@ body {
 .painting {
     width: 200px; 
     height: auto;
-    border: 2px solid var(--text-color);
+    border: 5px solid #F8C554;
+    
+
+
+}
