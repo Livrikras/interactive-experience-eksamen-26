@@ -35,3 +35,4 @@ const artscreen = [
     video: "videos/patrick.mp4",
   },
 ];
+
