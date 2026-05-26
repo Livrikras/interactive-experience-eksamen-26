@@ -90,10 +90,13 @@ artscreen.forEach((item) => {
           video: selectedVideo,
         },
         "*",
-      )
+      );
     }
-  }
+  });
+
+  gallery.appendChild(wrapper);
+
+});
 
 
-})
 
