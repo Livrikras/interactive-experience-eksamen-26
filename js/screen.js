@@ -79,7 +79,7 @@ artscreen.forEach((item) => {
   </div>
   `;
 
-  wrapper.addEventListener("click",)() => {
+  wrapper.addEventListener("click",() => {
     const selectedVideo = item.video;
 
     localStorage.setItem("selectedPortrait", selectedVideo);
@@ -93,10 +93,26 @@ artscreen.forEach((item) => {
       );
     }
   });
-
+// tilføjer wrapper til næste i rækken
   gallery.appendChild(wrapper);
 
 });
+// finder alle elementer med klassen card-wrapper galleriet
+const cards = gallery.querySelectorAll(".card-wrapper");
+
+const cardCount = cards.length;
+
+// funktion som sikrer at kort ikke får negativ værdig og går i rotation
+function updateCards() {
+  cards.forEach((card, index) => {
+    card.className = "card-wrapper";
+
+    const diff = (index - currentIndex + cardCount) % cardCount;
+  })
+
+  // if else 
+}
+
 
 
 
