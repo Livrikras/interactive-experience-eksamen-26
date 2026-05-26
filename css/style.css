@@ -184,3 +184,18 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+.card-wrapper.prev,
+.card-wrapper.next {
+  opacity: 1;
+  z-index: 1;
+  filter: blur(1px);
+}
+
+.card-wrapper.prev {
+  transform:
+    translate(calc(-50% - 320px), -50%)
+    scale(0.86);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.16),
+    0 10px 18px rgba(0, 0, 0, 0.1);
+}
