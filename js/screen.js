@@ -1,3 +1,5 @@
+"use strict"
+
 const artscreen = [
   {
     id: 1,
@@ -35,4 +37,11 @@ const artscreen = [
     video: "videos/patrick.mp4",
   },
 ];
+
+const gallery = document.querySelector(".gallery");
+
+const prevButton = document.querySelector(".carousel-button.prev");
+
+const nextButton = document.querySelector(".carousel-button.next");
+
 
