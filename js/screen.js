@@ -44,7 +44,7 @@ const prevButton = document.querySelector(".carousel-button.prev");
 
 const nextButton = document.querySelector(".carousel-button.next");
 
-// Gemmer position ved at bruge localstorage i karrusel
+// læser værdi ved localstorage i karrusel
 let currentIndex = Number(localStorage.getItem("carouselIndex"));
 
 
@@ -66,17 +66,34 @@ artscreen.forEach((item) => {
   wrapper.innerHTML = `
   <div class="card">
   
-  <img src"${item.image}" alt="${item.name}" class="painting">
+    <img src"${item.image}" alt="${item.name}" class="painting">
   
-  <div class="card-info">
+    <div class="card-info">
   
-  <span class="card-name"> ${item.name}</span>
+    <span class="card-name"> ${item.name}</span>
   
-  <span class="years"> ${item.year}</span>
+    <span class="years"> ${item.year}</span>
 
-  </div>
+    </div>
 
   </div>
   `;
+
+  wrapper.addEventListener("click",)() => {
+    const selectedVideo = item.video;
+
+    localStorage.setItem("selectedPortrait", selectedVideo);
+
+    if (projectionWindow && !projectionWindow.closed){
+      projectionWindow.postMessage(
+        {
+          video: selectedVideo,
+        },
+        "*",
+      )
+    }
+  }
+
+
 })
 
