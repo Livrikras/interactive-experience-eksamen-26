@@ -1,3 +1,5 @@
+"use strict"
+
 const artscreen = [
   {
     id: 1,
