@@ -44,4 +44,11 @@ const prevButton = document.querySelector(".carousel-button.prev");
 
 const nextButton = document.querySelector(".carousel-button.next");
 
+// Gemmer position ved at bruge localstorage i karrusel
 let currentIndex = Number(localStorage.getItem("carouselIndex"));
+
+
+if (!Number.isFinite(currentIndex)) {
+  currentIndex = 0; 
+}
+
