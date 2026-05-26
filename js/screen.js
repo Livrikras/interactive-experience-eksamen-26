@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 const artscreen = [
   {
@@ -47,9 +47,8 @@ const nextButton = document.querySelector(".carousel-button.next");
 // læser værdi ved localstorage i karrusel
 let currentIndex = Number(localStorage.getItem("carouselIndex"));
 
-
 if (!Number.isFinite(currentIndex)) {
-  currentIndex = 0; 
+  currentIndex = 0;
 }
 
 let projectionWindow = window.open(
@@ -66,7 +65,7 @@ artscreen.forEach((item) => {
   wrapper.innerHTML = `
   <div class="card">
   
-    <img src"=${item.image}" alt="${item.name}" class="painting">
+    <img src="${item.image}" alt="${item.name}" class="painting">
   
     <div class="card-info">
   
@@ -79,12 +78,12 @@ artscreen.forEach((item) => {
   </div>
   `;
 
-  wrapper.addEventListener("click",() => {
+  wrapper.addEventListener("click", () => {
     const selectedVideo = item.video;
 
     localStorage.setItem("selectedPortrait", selectedVideo);
 
-    if (projectionWindow && !projectionWindow.closed){
+    if (projectionWindow && !projectionWindow.closed) {
       projectionWindow.postMessage(
         {
           video: selectedVideo,
@@ -93,9 +92,8 @@ artscreen.forEach((item) => {
       );
     }
   });
-// tilføjer wrapper til næste i rækken
+  // tilføjer wrapper til næste i rækken
   gallery.appendChild(wrapper);
-
 });
 // finder alle elementer med klassen card-wrapper galleriet
 const cards = gallery.querySelectorAll(".card-wrapper");
@@ -109,21 +107,21 @@ function updateCards() {
     card.className = "card-wrapper";
 
     const diff = (index - currentIndex + cardCount) % cardCount;
-  
-// tilføjer klasser til kort baseret på lokation
-  if (diff === 0) {
-    card.classList.add("active"); // aktivt kort
-  } else if (diff === 1) {
-    card.classList.add("next"); // foran
-  } else if (diff === cardCount - 1) {
-    card.classList.add("prev"); // bagved
-  } else if (diff === 2) {
-    card.classList.add("next-right"); // 2 til højre
-  } else if (diff === cardCount - 2) {
-    card.classList.add("prev-left"); // 2 til ventre
-  } else {
-    card.classList.add("hidden"); // andre kort er skjulte
-  }
+
+    // tilføjer klasser til kort baseret på lokation
+    if (diff === 0) {
+      card.classList.add("active"); // aktivt kort
+    } else if (diff === 1) {
+      card.classList.add("next"); // foran
+    } else if (diff === cardCount - 1) {
+      card.classList.add("prev"); // bagved
+    } else if (diff === 2) {
+      card.classList.add("next-right"); // 2 til højre
+    } else if (diff === cardCount - 2) {
+      card.classList.add("prev-left"); // 2 til ventre
+    } else {
+      card.classList.add("hidden"); // andre kort er skjulte
+    }
   });
   // gemmer kort i local storage så de stadig er der ved genindlæsning
   localStorage.setItem("carouselIndex", currentIndex);
@@ -143,7 +141,3 @@ nextButton.onclick = function () {
 };
 
 updateCards();
-
-
-
-
