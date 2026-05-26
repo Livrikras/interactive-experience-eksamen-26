@@ -66,7 +66,7 @@ artscreen.forEach((item) => {
   wrapper.innerHTML = `
   <div class="card">
   
-    <img src"${item.image}" alt="${item.name}" class="painting">
+    <img src"=${item.image}" alt="${item.name}" class="painting">
   
     <div class="card-info">
   
