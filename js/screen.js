@@ -100,17 +100,32 @@ artscreen.forEach((item) => {
 // finder alle elementer med klassen card-wrapper galleriet
 const cards = gallery.querySelectorAll(".card-wrapper");
 
+// tæller hvor mange kort der er
 const cardCount = cards.length;
 
-// funktion som sikrer at kort ikke får negativ værdig og går i rotation
+// funktion som sikrer at kort ikke får negativ værdi og går i rotation
 function updateCards() {
   cards.forEach((card, index) => {
     card.className = "card-wrapper";
 
     const diff = (index - currentIndex + cardCount) % cardCount;
-  })
+  
+// tilføjer klasser til kort baseret på lokation
+  if (diff === 0) {
+    card.classList.add("active"); // aktivt kort
+  } else if (diff === 1) {
+    card.classList.add("next"); // foran
+  } else if (diff === cardCount - 1) {
+    card.classList.add("prev"); // bagved
+  } else if (diff === 2) {
+    card.classList.add("next-right"); // 2 til højre
+  } else if (diff === cardCount - 2) {
+    card.classList.add("prev-left"); // 2 til ventre
+  } else {
+    card.classList.add("hidden"); // andre kort er skjulte
+  }
+  });
 
-  // if else 
 }
 
 
