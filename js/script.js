@@ -5,3 +5,11 @@ function showVideo(videoPath) {
 
   videoElement.play();
 }
+
+window.addEventListener("message", (event) => {
+  const selectedVideo = event.data.video;
+
+  if (selectedVideo) {
+    showVideo(selectedVideo);
+  }
+});
