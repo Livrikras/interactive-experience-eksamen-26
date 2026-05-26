@@ -129,6 +129,21 @@ function updateCards() {
   localStorage.setItem("carouselIndex", currentIndex);
 }
 
+// lytter efter klik på knapper og opdaterer currentIndex - +1 -1 for rotation rotation
+prevButton.onclick = function () {
+  currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+
+  updateCards();
+};
+
+nextButton.onclick = function () {
+  currentIndex = (currentIndex + 1) % cardCount;
+
+  updateCards();
+};
+
+updateCards();
+
 
 
 
