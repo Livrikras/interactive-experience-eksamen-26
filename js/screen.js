@@ -125,7 +125,8 @@ function updateCards() {
     card.classList.add("hidden"); // andre kort er skjulte
   }
   });
-
+  // gemmer kort i local storage så de stadig er der ved genindlæsning
+  localStorage.setItem("carouselIndex", currentIndex);
 }
 
 
