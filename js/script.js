@@ -1,3 +1,5 @@
+"use strict";
+
 const videoElement = document.querySelector("#projectionVideo");
 
 function showVideo(videoPath) {
