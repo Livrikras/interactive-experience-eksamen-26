@@ -44,4 +44,4 @@ const prevButton = document.querySelector(".carousel-button.prev");
 
 const nextButton = document.querySelector(".carousel-button.next");
 
-
+let currentIndex = Number(localStorage.getItem("carouselIndex"));
