@@ -60,5 +60,20 @@ body {
   align-items: center;
 }
 
+.scene {
+  perspective: 1800px;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-
+.carousel-controls {
+  position: absolute;
+  bottom: 24px;
+  display: flex;
+  gap: 18px;
+  z-index: 2;
+}
