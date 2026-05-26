@@ -58,5 +58,25 @@ let projectionWindow = window.open(
   "width=1000, height=700",
 );
 
+artscreen.forEach((item) => {
+  const wrapper = document.createElement("div");
 
+  wrapper.className = "card-wrapper";
+
+  wrapper.innerHTML = `
+  <div class="card">
+  
+  <img src"${item.image}" alt="${item.name}" class="painting">
+  
+  <div class="card-info">
+  
+  <span class="card-name"> ${item.name}</span>
+  
+  <span class="years"> ${item.year}</span>
+
+  </div>
+
+  </div>
+  `;
+})
 
