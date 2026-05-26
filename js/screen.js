@@ -38,3 +38,10 @@ const artscreen = [
   },
 ];
 
+const gallery = document.querySelector(".gallery");
+
+const prevButton = document.querySelector(".carousel-button.prev");
+
+const nextButton = document.querySelector(".carousel-button.next");
+
+
