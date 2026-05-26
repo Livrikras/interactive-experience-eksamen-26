@@ -13,3 +13,9 @@ window.addEventListener("message", (event) => {
     showVideo(selectedVideo);
   }
 });
+
+const savedVideo = localStorage.getItem("selectedPortrait");
+
+if (savedVideo) {
+  showVideo(savedVideo);
+}
