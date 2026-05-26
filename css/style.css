@@ -159,3 +159,17 @@ body {
   line-height: 1.2;
   font-weight: 700;
 }
+
+
+.card-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.25s ease,
+    opacity 0.45s ease,
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+  z-index: 0;
+}
