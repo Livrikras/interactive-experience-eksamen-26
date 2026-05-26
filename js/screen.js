@@ -52,3 +52,11 @@ if (!Number.isFinite(currentIndex)) {
   currentIndex = 0; 
 }
 
+let projectionWindow = window.open(
+  "projection.html",
+  "_blank",
+  "width=1000, height=700",
+);
+
+
+
