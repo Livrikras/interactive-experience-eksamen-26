@@ -388,4 +388,12 @@ body {
   display: block;
 }
 
-
+/* card info ved "Alle værker" */
+.grid-card .card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  color: #2a2a2a;
+  font-weight: 700;
+  text-transform: uppercase;
+}
