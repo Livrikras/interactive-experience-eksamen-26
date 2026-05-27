@@ -8,8 +8,8 @@ const artscreen = [
     image: "img/frits-albert-florentinus-strand.png",
     name: "Frits A. F. Strand",
     year: "1853-1936",
-    videoDK: "videos/frits.mp4",
-    videoEN: "videos/frits-en.mp4",
+    videoDK: "video/frits-dansk.test.mp4",
+    videoEN: "video/frits-engelsk.test.mp4",
   },
   {
     id: 2,
@@ -86,7 +86,8 @@ artscreen.forEach((item) => {
   `;
 
   wrapper.addEventListener("click", () => {
-    const selectedVideo = item.video;
+    const selectedVideo =
+      currentLanguage === "en" ? item.videoEN : item.videoDK;
 
     localStorage.setItem("selectedPortrait", selectedVideo);
 
