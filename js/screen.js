@@ -52,7 +52,7 @@ if (!Number.isFinite(currentIndex)) {
 }
 
 let projectionWindow = window.open(
-  "projection.html",
+  "projektion.html",
   "_blank",
   "width=1000, height=700",
 );
