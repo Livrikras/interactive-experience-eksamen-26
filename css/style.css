@@ -276,7 +276,43 @@ body {
 
   transition:0.3s ease;
 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
 }
 
 
+/* Skærmens overskrift */
+.index-titel {
+  z-index: 999;
+  position: absolute;
+  top: 50px;
+  font-size: 40px;
+  color: rgb(237, 235, 235);
+  font-family: var(--font-family);
+}
 
+/* Knap til at se alle værker */
+.artgallery-btn button{
+  z-index: 999;
+  position: absolute;
+  bottom: 32px;
+  left: 40px;
+  border: 2px solid var(--button-border);
+  background: transparent;
+
+  padding: 20px 32px;
+  border-radius: 32px;
+  cursor: pointer;
+
+  color: rgb(237, 235, 235);
+  font-family: var(--font-family);
+  font-size: 20px;
+  transition:0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.artgallery-btn button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
