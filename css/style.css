@@ -280,6 +280,10 @@ body {
 
 }
 
+.selected {
+  border: 3px solid white;
+}
+
 
 /* Skærmens overskrift */
 .index-titel {

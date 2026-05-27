@@ -150,6 +150,7 @@ nextButton.onclick = function () {
 
 updateCards()
 
+// Sprogvalg
 const englishFlag = document.querySelector("#englishFlag");
 
 const danishFlag = document.querySelector("#danishFlag");
@@ -159,6 +160,15 @@ englishFlag.addEventListener("click", () => {
   currentLanguage = "en";
 
   localStorage.setItem("language", "en");
+
+  // Fjerner border fra dansk flag
+  
+
+  danishFlag.classList.remove("selected");
+
+  if (currentLanguage === "en") {
+    englishFlag.classList.add("selected");
+  }
 });
 
 
@@ -167,4 +177,13 @@ danishFlag.addEventListener("click", () => {
   currentLanguage = "dk";
 
   localStorage.setItem("language", "dk");
+
+  // Fjern border fra engelsk flag
+  
+
+  englishFlag.classList.remove("selected");
+
+  if (currentLanguage === "dk") {
+    danishFlag.classList.add("selected");
+  }
 });
