@@ -293,6 +293,7 @@ body {
   font-size: 40px;
   color: rgb(237, 235, 235);
   font-family: var(--font-family);
+  text-transform: uppercase;
 }
 
 /* Knap til at se alle værker */
@@ -320,4 +321,56 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
 }
+
+.all-artworks {
+
+  position: fixed;
+  inset: 0;
+  background: #231d1a;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 120px 80px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(80px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.all-artworks.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.gallery-title {
+  text-align: center;
+  color: white;
+  font-size: 56px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 80px;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
+}
+
+/* card styling i alle værker */
+.grid-card {
+
+  background: #f8c554;
+  border: 5px solid #f8c554;
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 
