@@ -49,32 +49,32 @@ const artscreen = [
 const extraArtworks = [
   {
     id: 6,
-    image: "img/anne.png",
+    image: "img/anette-jensen.png",
     name: "Anette Jensen",
     year: "1980-",
   },
 
   {
     id: 7,
-    image: "img/ole.png",
+    image: "img/bent-toersleff.png",
     name: "BENT TØRSLEFF",
     year: "1981-2001",
   },
   {
     id: 8,
-    image: "img/ole.png",
+    image: "img/henning-egbjerg-simonsen.png",
     name: "HENNING EGEBJERG SIMONSEN",
     year: "1936-1989",
   },
   {
     id: 9,
-    image: "img/ole.png",
+    image: "img/jan-nedergaard.png",
     name: "JAN NEDERGÅRD",
     year: "1951-1986",
   },
   {
     id: 10,
-    image: "img/ole.png",
+    image: "img/conny-maxwell-noegaard.png",
     name: "CONNY MAXWELL NØRGAARD",
     year: "Ukendt",
   },
@@ -236,8 +236,7 @@ const artGrid =
   document.querySelector(".art-grid");
 
 
-artscreen.forEach((item) => {
-
+[...artscreen, ...extraArtworks].forEach((item) => {
   const card = document.createElement("div");
 
   card.classList.add("grid-card");
