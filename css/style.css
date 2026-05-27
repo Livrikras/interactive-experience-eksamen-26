@@ -314,6 +314,7 @@ body {
   font-size: 20px;
   transition:0.3s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
 }
 
 .artgallery-btn button:hover {
@@ -413,6 +414,7 @@ body {
   cursor: pointer;
   transition: 0.3s ease;
   backdrop-filter: blur(10px);
+  text-transform: uppercase;
 }
 
 .back-button:hover {
