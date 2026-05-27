@@ -388,4 +388,34 @@ body {
   display: block;
 }
 
+/* card info ved "Alle værker" */
+.grid-card .card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  color: #2a2a2a;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
+/* tilbage knap */
+.back-button {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: white;
+}
