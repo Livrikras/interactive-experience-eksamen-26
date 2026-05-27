@@ -359,3 +359,18 @@ body {
     repeat(auto-fit, minmax(320px, 1fr));
   gap: 50px;
 }
+
+/* card styling i alle værker */
+.grid-card {
+
+  background: #f8c554;
+  border: 5px solid #f8c554;
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
