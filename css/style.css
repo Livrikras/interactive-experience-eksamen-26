@@ -225,6 +225,7 @@ body {
     0 20px 45px rgba(0, 0, 0, 0.2);
 }
 
+
 /* Baggrundslys bag ved cards */
 .glow {
   position: absolute;
@@ -243,4 +244,39 @@ body {
 
   z-index: 0;
 }
+
+
+/* Sprog skift */
+.language-switch{
+
+  position:fixed;
+
+  right:40px;
+  bottom:30px;
+
+  display:flex;
+
+  gap:18px;
+
+  z-index:999;
+
+}
+
+
+
+.language-switch img{
+
+  width:58px;
+
+  height:58px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  transition:0.3s ease;
+
+}
+
+
 

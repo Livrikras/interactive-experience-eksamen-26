@@ -1,40 +1,47 @@
 "use strict";
 
+let currentLanguage = localStorage.getItem("language") || "dk";
+
 const artscreen = [
   {
     id: 1,
     image: "img/frits-albert-florentinus-strand.png",
     name: "Frits A. F. Strand",
     year: "1853-1936",
-    video: "videos/frits.mp4",
+    videoDK: "videos/frits.mp4",
+    videoEN: "videos/frits-en.mp4",
   },
   {
     id: 2,
     image: "img/jette-hansen.png",
     name: "Jette Hansen",
     year: "1946-",
-    video: "videos/jette.mp4",
+    videoDK: "videos/jette.mp4",
+    videoEN: "videos/jette-en.mp4",
   },
   {
     id: 3,
     image: "img/marie-heiberg.png",
     name: "Marie Heiberg",
     year: "1942-2008",
-    video: "videos/marie.mp4",
+    videoDK: "videos/marie.mp4",
+    videoEN: "videos/marie-en.mp4",
   },
   {
     id: 4,
     image: "img/ole-norge.png",
     name: "Ole Norge",
     year: "1951-2012",
-    video: "videos/ole.mp4",
+    videoDK: "videos/ole.mp4",
+    videoEN: "videos/ole-en.mp4",
   },
   {
     id: 5,
     image: "img/patrick-larsen.png",
     name: "Patrick Larsen",
     year: "1951-1986",
-    video: "videos/patrick.mp4",
+    videoDK: "videos/patrick.mp4",
+    videoEN: "videos/patrick-en.mp4",
   },
 ];
 
@@ -52,7 +59,7 @@ if (!Number.isFinite(currentIndex)) {
 }
 
 let projectionWindow = window.open(
-  "projektion.html",
+  "projection.html",
   "_blank",
   "width=1000, height=700",
 );
@@ -140,4 +147,23 @@ nextButton.onclick = function () {
   updateCards();
 };
 
-updateCards();
+updateCards()
+
+const englishFlag = document.querySelector("#englishFlag");
+
+const danishFlag = document.querySelector("#danishFlag");
+
+
+englishFlag.addEventListener("click", () => {
+  currentLanguage = "en";
+
+  localStorage.setItem("language", "en");
+});
+
+
+
+danishFlag.addEventListener("click", () => {
+  currentLanguage = "dk";
+
+  localStorage.setItem("language", "dk");
+});
