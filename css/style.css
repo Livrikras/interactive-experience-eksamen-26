@@ -1,5 +1,5 @@
 :root {
-  --background-color: #564a45;
+  --background-color: #231d1a;
   --text-color: #2a2a2a;
   --button-bg: rgba(0, 0, 0, 0.24);
   --button-border: rgba(255, 255, 255, 0.65);
@@ -224,3 +224,23 @@ body {
     0 45px 95px rgba(0, 0, 0, 0.26)
     0 20px 45px rgba(0, 0, 0, 0.2);
 }
+
+/* Baggrundslys bag ved cards */
+.glow {
+  position: absolute;
+  width: 1800px;
+  height: 500px;
+
+ background: radial-gradient(
+  circle,
+  #D9A15B 0%,
+  #b18146 25%,
+  #996f38 50%,
+  transparent 75%
+);
+
+  filter: blur(90px);
+
+  z-index: 0;
+}
+
