@@ -43,6 +43,41 @@ const artscreen = [
     videoDK: "video/patrick-dansk.test.mp4",
     videoEN: "video/patrick-engelsk.test.mp4",
   },
+  
+];
+
+const extraArtworks = [
+  {
+    id: 6,
+    image: "img/anne.png",
+    name: "Anette Jensen",
+    year: "1980-",
+  },
+
+  {
+    id: 7,
+    image: "img/ole.png",
+    name: "BENT TØRSLEFF",
+    year: "1981-2001",
+  },
+  {
+    id: 8,
+    image: "img/ole.png",
+    name: "HENNING EGEBJERG SIMONSEN",
+    year: "1936-1989",
+  },
+  {
+    id: 9,
+    image: "img/ole.png",
+    name: "JAN NEDERGÅRD",
+    year: "1951-1986",
+  },
+  {
+    id: 10,
+    image: "img/ole.png",
+    name: "CONNY MAXWELL NØRGAARD",
+    year: "Ukendt",
+  },
 ];
 
 const gallery = document.querySelector(".gallery");
