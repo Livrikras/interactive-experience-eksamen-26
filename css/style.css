@@ -302,7 +302,6 @@ body {
   position: absolute;
   bottom: 32px;
   left: 40px;
-  border: 2px solid #f8c554;
   background: #f8c554;
 
   padding: 20px 32px;
@@ -319,8 +318,7 @@ body {
 
 .artgallery-btn button:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ffffff;
+  background: #bf8c1d;
 }
 
 .all-artworks {
