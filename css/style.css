@@ -302,14 +302,14 @@ body {
   position: absolute;
   bottom: 32px;
   left: 40px;
-  border: 2px solid var(--button-border);
-  background: transparent;
+  border: 2px solid #f8c554;
+  background: #f8c554;
 
   padding: 20px 32px;
   border-radius: 32px;
   cursor: pointer;
 
-  color: rgb(237, 235, 235);
+  color: var(--text-color);
   font-family: var(--font-family);
   font-size: 20px;
   transition:0.3s ease;
