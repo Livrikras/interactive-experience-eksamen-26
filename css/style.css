@@ -341,3 +341,19 @@ body {
   pointer-events: all;
   transform: translateY(0);
 }
+
+.gallery-title {
+  text-align: center;
+  color: white;
+  font-size: 56px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin-bottom: 80px;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns:
+  repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
+}
