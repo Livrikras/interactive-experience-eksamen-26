@@ -322,22 +322,3 @@ body {
   border-color: #ffffff;
 }
 
-/* styling på card i "Alle værker" */
-.grid-card {
-
-  background: #f8c554;
-  border: 5px solid #f8c554;
-  overflow: hidden;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-/* hover effekt på grid card (slettet formentlig) */
-.grid-card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.4);
-}
