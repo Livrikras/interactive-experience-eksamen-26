@@ -187,3 +187,49 @@ danishFlag.addEventListener("click", () => {
     danishFlag.classList.add("selected");
   }
 });
+
+const showGalleryBtn =
+  document.querySelector(".show-gallery-btn");
+
+const allArtworks =
+  document.querySelector(".all-artworks");
+
+const backButton =
+  document.querySelector(".back-button");
+
+const artGrid =
+  document.querySelector(".art-grid");
+
+
+artscreen.forEach((item) => {
+
+  const card = document.createElement("div");
+
+  card.classList.add("grid-card");
+
+  card.innerHTML = `
+  
+    <img src="${item.image}" alt="${item.name}">
+
+    <div class="card-info">
+
+      <span>${item.name}</span>
+
+      <span>${item.year}</span>
+
+    </div>
+  
+  `;
+
+  artGrid.appendChild(card);
+});
+
+showGalleryBtn.addEventListener("click", () => {
+
+  allArtworks.classList.add("active");
+});
+
+backButton.addEventListener("click", () => {
+
+  allArtworks.classList.remove("active");
+});
