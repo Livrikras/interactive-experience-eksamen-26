@@ -221,6 +221,7 @@ nextButton.addEventListener("click", () => {
 });
 updateCards();
 
+// swipe-touch på cards i udvalgte værker
 // gemmer start position for touch event
 let fingerStart = 0;
 
