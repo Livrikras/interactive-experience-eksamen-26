@@ -72,10 +72,38 @@ body {
 
 .carousel-controls {
   position: absolute;
-  bottom: 24px;
+  top: 50%;
+  left: 50%;
+  width: 1400px;
+  transform: translate(-50%, -50%);
   display: flex;
-  gap: 18px;
+  justify-content: space-between;
   z-index: 2;
+  align-items: center;
+}
+
+.stop-projection-btn {
+  position: absolute;
+  bottom: 110px;
+  padding: 14px 22px;
+  border: 2px solid var(--button-border);
+  background: rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 30px;
+  z-index: 3;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: flex;
+  bottom: 50px;
+}
+
+.stop-projection-btn:hover {
+  transform: translateY(-2px);
+}
+
+.is-hidden {
+  display: none !important;
 }
 
 .carousel-button {
@@ -398,4 +426,22 @@ body {
   background: rgba(255, 255, 255, 0.14);
   border-color: white;
   transform: scale(0.95);
+}
+
+.section-title {
+  position: absolute;
+  top: 30px;
+  margin-bottom: 100px;
+  color: #d8aa48;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 999;
+  justify-self: center;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
 }

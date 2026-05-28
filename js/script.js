@@ -14,9 +14,18 @@ window.addEventListener("message", (event) => {
   if (selectedVideo) {
     showVideo(selectedVideo);
   }
+
+  if (event.data.action === "stop") {
+    stopProjection();
+  }
 });
 
-videoElement.addEventListener("ended", () => {
+function stopProjection() {
+  videoElement.pause();
   videoElement.src = "";
   document.body.style.backgroundColor = "#564A45";
+}
+
+videoElement.addEventListener("ended", () => {
+  stopProjection();
 });

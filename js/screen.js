@@ -95,6 +95,8 @@ const prevButton = document.querySelector(".carousel-button.prev");
 
 const nextButton = document.querySelector(".carousel-button.next");
 
+const stopProjectionButton = document.querySelector(".stop-projection-btn");
+
 // læser værdi ved localstorage i karrusel
 let currentIndex = Number(localStorage.getItem("carouselIndex"));
 
@@ -107,6 +109,34 @@ let projectionWindow = window.open(
   "_blank",
   "width=1000, height=700",
 );
+
+function openProjectionWindow() {
+  if (!projectionWindow || projectionWindow.closed) {
+    projectionWindow = window.open(
+      "projection.html",
+      "_blank",
+      "width=1000, height=700",
+    );
+  }
+
+  return projectionWindow;
+}
+
+function showStopProjectionButton() {
+  stopProjectionButton.classList.remove("is-hidden");
+}
+
+function hideStopProjectionButton() {
+  stopProjectionButton.classList.add("is-hidden");
+}
+
+stopProjectionButton.addEventListener("click", () => {
+  if (projectionWindow && !projectionWindow.closed) {
+    projectionWindow.postMessage({ action: "stop" }, "*");
+  }
+
+  hideStopProjectionButton();
+});
 
 artscreen.forEach((item) => {
   const wrapper = document.createElement("div");
@@ -129,13 +159,17 @@ artscreen.forEach((item) => {
 
     localStorage.setItem("selectedPortrait", selectedVideo);
 
-    if (projectionWindow && !projectionWindow.closed) {
-      projectionWindow.postMessage(
+    const win = openProjectionWindow();
+
+    if (win && !win.closed) {
+      win.postMessage(
         {
           video: selectedVideo,
         },
         "*",
       );
+
+      showStopProjectionButton();
     }
   });
   // tilføjer wrapper til næste i rækken
