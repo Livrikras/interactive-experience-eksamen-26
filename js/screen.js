@@ -130,6 +130,8 @@ function hideStopProjectionButton() {
   stopProjectionButton.classList.add("is-hidden");
 }
 
+// Koden tjekker om projectionWindow findes og er åbent.
+// Hvis ja: sendes en besked { action: "stop" } til det andet browser-vindue via postMessage().
 stopProjectionButton.addEventListener("click", () => {
   if (projectionWindow && !projectionWindow.closed) {
     projectionWindow.postMessage({ action: "stop" }, "*");
