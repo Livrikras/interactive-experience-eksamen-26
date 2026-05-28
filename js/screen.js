@@ -214,6 +214,24 @@ const artGrid = document.querySelector(".art-grid");
   
   `;
 
+  if (item.videoDK && item.videoEN) {
+    card.addEventListener("click", () => {
+      const selectedVideo =
+        currentLanguage === "en" ? item.videoEN : item.videoDK;
+
+      localStorage.setItem("selectedPortrait", selectedVideo);
+
+      if (projectionWindow && !projectionWindow.closed) {
+        projectionWindow.postMessage(
+          {
+            video: selectedVideo,
+          },
+          "*",
+        );
+      }
+    });
+  }
+
   artGrid.appendChild(card);
 });
 
