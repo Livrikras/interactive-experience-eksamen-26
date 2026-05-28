@@ -187,6 +187,31 @@ nextButton.addEventListener("click", () => {
 });
 updateCards();
 
+// gemmer start position for touch event
+let fingerStart = 0;
+
+// Når fingeren rammer skærmen, gemmes dens vandrette position i pixels.
+gallery.addEventListener("touchstart", (event) => {
+  fingerStart = event.touches[0].clientX;
+});
+
+// når finger løftes sammenlignes den med start position hvis den er 50 pixels til højre eller venstre
+gallery.addEventListener("touchend", (event) => {
+  let fingerEnd = event.changedTouches[0].clientX;
+  let swipe = fingerStart - fingerEnd;
+
+  // swipe minimum 50 pixels udgør swipe til venstre
+  if (swipe > 50) {
+    currentIndex = (currentIndex + 1) % cardCount;
+    updateCards();
+  }
+  // swipe minimum 50 pixels udgør swipe til højre
+  if (swipe < -50) {
+    currentIndex = (currentIndex - 1 + cardCount) % cardCount;
+    updateCards();
+  }
+});
+
 const showGalleryBtn = document.querySelector(".show-gallery-btn");
 
 const allArtworks = document.querySelector(".all-artworks");
