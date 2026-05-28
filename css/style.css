@@ -108,14 +108,10 @@ body {
   transform: rotate(-135deg);
 }
 
-.carousel-button:hover {
-  transform: translateY(-2px);
+.carousel-button:active {
+  transform: scale(0.9);
   background: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
-}
-
-.carousel-button:active {
-  transform: translateY(0);
 }
 
 .gallery {
@@ -239,46 +235,31 @@ body {
   #996f38 50%,
   transparent 75%
 );
-
   filter: blur(90px);
-
   z-index: 0;
 }
 
-
-
 .language-switch{
-
   position:fixed;
-
   right:40px;
   bottom:30px;
-
   display:flex;
-
   gap:18px;
-
   z-index:999;
-
 }
 
-
-
 .language-switch img{
-
   width:58px;
   height:58px;
   object-fit:cover;
   border-radius:50%;
   transition:0.3s ease;
   box-shadow:0 4px 12px rgba(0,0,0,0.25);
-
 }
 
 .selected {
   border: 3px solid white;
 }
-
 
 /* Skærmens overskrift */
 .index-titel {
@@ -309,8 +290,8 @@ body {
   text-transform: uppercase;
 }
 
-.artgallery-btn button:hover {
-  transform: translateY(-2px);
+.artgallery-btn button:active {
+  transform: scale(0.96);
   background: #bf8c1d;
 }
 
@@ -365,9 +346,8 @@ body {
     box-shadow 0.3s ease;
 }
 
-/* hover ved cards "Alle værker" (slettet formentligt) */
-.grid-card:hover {
-  transform: translateY(-8px);
+.grid-card:active {
+  transform: scale(0.97);
   box-shadow:
     0 30px 60px rgba(0, 0, 0, 0.4);
 }
@@ -408,7 +388,8 @@ body {
   text-transform: uppercase;
 }
 
-.back-button:hover {
+.back-button:active {
   background: rgba(255, 255, 255, 0.14);
   border-color: white;
+  transform: scale(0.95);
 }

@@ -51,6 +51,8 @@ const extraArtworks = [
     image: "img/anette-jensen.png",
     name: "Anette Jensen",
     year: "1980-",
+    videoDK: "video/patrick-dansk.test.mp4",
+    videoEN: "video/patrick-engelsk.test.mp4",
   },
 
   {
@@ -58,24 +60,32 @@ const extraArtworks = [
     image: "img/bent-toersleff.png",
     name: "BENT TØRSLEFF",
     year: "1981-2001",
+    videoDK: "video/patrick-dansk.test.mp4",
+    videoEN: "video/patrick-engelsk.test.mp4",
   },
   {
     id: 8,
     image: "img/henning-egbjerg-simonsen.png",
     name: "HENNING EGEBJERG SIMONSEN",
     year: "1936-1989",
+    videoDK: "video/patrick-dansk.test.mp4",
+    videoEN: "video/patrick-engelsk.test.mp4",
   },
   {
     id: 9,
     image: "img/jan-nedergaard.png",
     name: "JAN NEDERGÅRD",
     year: "1951-1986",
+    videoDK: "video/patrick-dansk.test.mp4",
+    videoEN: "video/patrick-engelsk.test.mp4",
   },
   {
     id: 10,
     image: "img/conny-maxwell-noegaard.png",
     name: "CONNY MAXWELL NØRGAARD",
     year: "Ukendt",
+    videoDK: "video/patrick-dansk.test.mp4",
+    videoEN: "video/patrick-engelsk.test.mp4",
   },
 ];
 
@@ -105,17 +115,11 @@ artscreen.forEach((item) => {
 
   wrapper.innerHTML = `
   <div class="card">
-  
     <img src="${item.image}" alt="${item.name}" class="painting">
-  
     <div class="card-info">
-  
     <span class="card-name"> ${item.name}</span>
-  
     <span class="years"> ${item.year}</span>
-
     </div>
-
   </div>
   `;
 
@@ -170,52 +174,18 @@ function updateCards() {
 }
 
 // lytter efter klik på knapper og opdaterer currentIndex - +1 -1 for rotation rotation
-prevButton.onclick = function () {
+prevButton.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + cardCount) % cardCount;
 
   updateCards();
-};
+});
 
-nextButton.onclick = function () {
+nextButton.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % cardCount;
 
   updateCards();
-};
-
+});
 updateCards();
-
-// Sprogvalg
-const englishFlag = document.querySelector("#englishFlag");
-
-const danishFlag = document.querySelector("#danishFlag");
-
-englishFlag.addEventListener("click", () => {
-  currentLanguage = "en";
-
-  localStorage.setItem("language", "en");
-
-  // Fjerner border fra dansk flag
-
-  danishFlag.classList.remove("selected");
-
-  if (currentLanguage === "en") {
-    englishFlag.classList.add("selected");
-  }
-});
-
-danishFlag.addEventListener("click", () => {
-  currentLanguage = "dk";
-
-  localStorage.setItem("language", "dk");
-
-  // Fjern border fra engelsk flag
-
-  englishFlag.classList.remove("selected");
-
-  if (currentLanguage === "dk") {
-    danishFlag.classList.add("selected");
-  }
-});
 
 const showGalleryBtn = document.querySelector(".show-gallery-btn");
 
@@ -255,18 +225,47 @@ backButton.addEventListener("click", () => {
   allArtworks.classList.remove("active");
 });
 
-document.querySelector("#englishFlag").addEventListener("click", () => {
-  localStorage.setItem("language", "en");
-  document.querySelector(".index-titel").textContent = "Click and choose a painting";
-  document.querySelector(".show-gallery-btn").textContent = "Show all paintings";
-  document.querySelector(".back-button").textContent = "← Back";
-  document.querySelector(".gallery-title").textContent = "All paintings";
+const englishFlag = document.querySelector("#englishFlag");
+const danishFlag = document.querySelector("#danishFlag");
+
+function setLanguage(language) {
+  currentLanguage = language;
+
+  localStorage.setItem("language", language);
+
+  if (language === "en") {
+    englishFlag.classList.add("selected");
+    danishFlag.classList.remove("selected");
+
+    document.querySelector(".index-titel").textContent =
+      "Click and choose a painting";
+
+    document.querySelector(".show-gallery-btn").textContent =
+      "Show all paintings";
+
+    document.querySelector(".back-button").textContent = "← Back";
+
+    document.querySelector(".gallery-title").textContent = "All paintings";
+  }
+
+  if (language === "dk") {
+    danishFlag.classList.add("selected");
+    englishFlag.classList.remove("selected");
+
+    document.querySelector(".index-titel").textContent = "Klik på et værk";
+
+    document.querySelector(".show-gallery-btn").textContent = "Vis alle værker";
+
+    document.querySelector(".back-button").textContent = "← Tilbage";
+
+    document.querySelector(".gallery-title").textContent = "Alle værker";
+  }
+}
+
+englishFlag.addEventListener("click", () => {
+  setLanguage("en");
 });
 
-document.querySelector("#danishFlag").addEventListener("click", () => {
-  localStorage.setItem("language", "dk");
-  document.querySelector(".index-titel").textContent = "Klik på et værk";
-  document.querySelector(".show-gallery-btn").textContent = "Vis alle værker";
-  document.querySelector(".back-button").textContent = "← Tilbage";
-  document.querySelector(".gallery-title").textContent = "Alle værker";
+danishFlag.addEventListener("click", () => {
+  setLanguage("dk");
 });
