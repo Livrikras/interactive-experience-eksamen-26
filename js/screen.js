@@ -43,7 +43,6 @@ const artscreen = [
     videoDK: "video/patrick-dansk.test.mp4",
     videoEN: "video/patrick-engelsk.test.mp4",
   },
-  
 ];
 
 const extraArtworks = [
@@ -183,13 +182,12 @@ nextButton.onclick = function () {
   updateCards();
 };
 
-updateCards()
+updateCards();
 
 // Sprogvalg
 const englishFlag = document.querySelector("#englishFlag");
 
 const danishFlag = document.querySelector("#danishFlag");
-
 
 englishFlag.addEventListener("click", () => {
   currentLanguage = "en";
@@ -197,7 +195,6 @@ englishFlag.addEventListener("click", () => {
   localStorage.setItem("language", "en");
 
   // Fjerner border fra dansk flag
-  
 
   danishFlag.classList.remove("selected");
 
@@ -206,15 +203,12 @@ englishFlag.addEventListener("click", () => {
   }
 });
 
-
-
 danishFlag.addEventListener("click", () => {
   currentLanguage = "dk";
 
   localStorage.setItem("language", "dk");
 
   // Fjern border fra engelsk flag
-  
 
   englishFlag.classList.remove("selected");
 
@@ -223,18 +217,13 @@ danishFlag.addEventListener("click", () => {
   }
 });
 
-const showGalleryBtn =
-  document.querySelector(".show-gallery-btn");
+const showGalleryBtn = document.querySelector(".show-gallery-btn");
 
-const allArtworks =
-  document.querySelector(".all-artworks");
+const allArtworks = document.querySelector(".all-artworks");
 
-const backButton =
-  document.querySelector(".back-button");
+const backButton = document.querySelector(".back-button");
 
-const artGrid =
-  document.querySelector(".art-grid");
-
+const artGrid = document.querySelector(".art-grid");
 
 [...artscreen, ...extraArtworks].forEach((item) => {
   const card = document.createElement("div");
@@ -259,11 +248,25 @@ const artGrid =
 });
 
 showGalleryBtn.addEventListener("click", () => {
-
   allArtworks.classList.add("active");
 });
 
 backButton.addEventListener("click", () => {
-
   allArtworks.classList.remove("active");
+});
+
+document.querySelector("#englishFlag").addEventListener("click", () => {
+  localStorage.setItem("language", "en");
+  document.querySelector(".index-titel").textContent = "Click and choose a painting";
+  document.querySelector(".show-gallery-btn").textContent = "Show all paintings";
+  document.querySelector(".back-button").textContent = "← Back";
+  document.querySelector(".gallery-title").textContent = "All paintings";
+});
+
+document.querySelector("#danishFlag").addEventListener("click", () => {
+  localStorage.setItem("language", "dk");
+  document.querySelector(".index-titel").textContent = "Klik på et værk";
+  document.querySelector(".show-gallery-btn").textContent = "Vis alle værker";
+  document.querySelector(".back-button").textContent = "← Tilbage";
+  document.querySelector(".gallery-title").textContent = "Alle værker";
 });
