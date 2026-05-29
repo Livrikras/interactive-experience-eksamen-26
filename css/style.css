@@ -4,6 +4,9 @@
   --button-bg: rgba(0, 0, 0, 0.24);
   --button-border: rgba(255, 255, 255, 0.65);
   --card-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --accent: #1f3b5c;
+  --accent-soft: #16222e;
+  --glow: rgba(73, 107, 151, 0.35);
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -12,7 +15,7 @@ h1 {
   font-size: 24px;
   font-style: normal;
   font-variant: normal;
-  font-weight: 700;
+  font-weight: 300;
   line-height: 26.4px;
 }
 h3 {
@@ -93,7 +96,9 @@ body {
   cursor: pointer;
   font-size: 30px;
   z-index: 3;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
   display: flex;
   bottom: 50px;
 }
@@ -144,29 +149,136 @@ body {
 
 .gallery {
   position: relative;
-  width: 900px;
-  height: 580px;
+  width: 1400px;
+  height: 620px;
   overflow: visible;
 }
 .painting {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 .card {
-  background: #f8c554;
-  border: 1px solid #f8c554;
-  border-radius:20px;
+  display: flex;
+  width: 340px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 24px;
+  transition:
+    width 220ms ease,
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--accent-soft, rgba(255, 255, 255, 0.08));
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.25),
     0 15px 35px rgba(0, 0, 0, 0.18);
+}
 
+.card-wrapper.active .card {
+  width: 700px;
+  background: var(--accent);
+}
+
+.info-side {
+  display: flex;
+  opacity: 0;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  box-sizing: border-box;
+  flex-direction: column;
   overflow: hidden;
+  transition:
+    opacity 160ms ease,
+    width 160ms ease,
+    padding 160ms ease;
+  pointer-events: none;
+}
 
-  width: 330px;
-  min-height: 400px;
-  
+.card-wrapper.active .info-side {
+  opacity: 1;
+  width: 50%;
+  padding: 40px 36px;
+  pointer-events: auto;
+}
+
+.image-side {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-wrapper.active .image-side {
+  width: 58%;
+}
+
+.side-overlay {
+  display: none;
+}
+
+.side-year {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #e6d8b8;
+  opacity: 0.9;
+}
+
+.card-year {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #e6d8b8;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+
+.artist-name {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0;
+  color: #ffffff;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 12px;
+  color: #d8d8d8;
+  margin-bottom: 24px;
+  margin-top: 12px;
+}
+
+.meta span {
+  display: block;
+}
+
+.description {
+  line-height: 1.8;
+  opacity: 1;
+  margin: 0;
+  color: #e6e6e6;
+}
+
+.story-btn {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #222222cb;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 14px 26px;
+  margin-top: 28px;
+  width: fit-content;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.story-btn:active {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .card-info {
@@ -186,7 +298,6 @@ body {
   font-weight: 700;
 }
 
-
 .card-wrapper {
   position: absolute;
   left: 50%;
@@ -201,9 +312,7 @@ body {
 }
 
 .card-wrapper:active {
-  transform:
-    translate(-50%, -50%)
-    scale(0.97);
+  transform: translate(-50%, -50%) scale(0.97);
 }
 
 .card-wrapper.hidden {
@@ -212,23 +321,19 @@ body {
 }
 .card-wrapper.prev,
 .card-wrapper.next {
-  opacity: 1;
+  opacity: 0.55;
   z-index: 1;
-  filter: blur(1px);
+  filter: blur(1px) brightness(0.78);
 }
 
 .card-wrapper.prev {
-  transform:
-    translate(calc(-50% - 320px), -50%)
-    scale(0.86);
+  transform: translate(calc(-50% - 470px), -50%) scale(0.55);
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.16),
     0 10px 18px rgba(0, 0, 0, 0.1);
 }
 .card-wrapper.next {
-  transform:
-    translate(calc(-50% + 320px), -50%)
-    scale(0.86);
+  transform: translate(calc(-50% + 470px), -50%) scale(0.55);
   box-shadow:
     0 18px 40px rgba(0, 0, 0, 0.16),
     0 10px 18px rgba(0, 0, 0, 0.1);
@@ -241,9 +346,7 @@ body {
 }
 
 .card-wrapper.active {
-  transform:
-    translate(-50%, -50%)
-    scale(1.12);
+  transform: translate(-50%, -50%) scale(1.16);
   opacity: 1;
   z-index: 2;
   box-shadow:
@@ -251,40 +354,39 @@ body {
     0 20px 45px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Baggrundslys bag ved cards */
 .glow {
   position: absolute;
-  width: 1800px;
+  width: 1600px;
   height: 500px;
 
- background: radial-gradient(
-  circle,
-  #D9A15B 0%,
-  #b18146 25%,
-  #996f38 50%,
-  transparent 75%
-);
+  background: radial-gradient(
+    circle,
+    #d9a15b 0%,
+    #b18146 25%,
+    #996f38 50%,
+    transparent 75%
+  );
   filter: blur(90px);
   z-index: 0;
 }
 
-.language-switch{
-  position:fixed;
-  right:40px;
-  bottom:30px;
-  display:flex;
-  gap:18px;
-  z-index:999;
+.language-switch {
+  position: fixed;
+  right: 40px;
+  bottom: 30px;
+  display: flex;
+  gap: 18px;
+  z-index: 999;
 }
 
-.language-switch img{
-  width:58px;
-  height:58px;
-  object-fit:cover;
-  border-radius:50%;
-  transition:0.3s ease;
-  box-shadow:0 4px 12px rgba(0,0,0,0.25);
+.language-switch img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .selected {
@@ -296,37 +398,36 @@ body {
   z-index: 999;
   position: absolute;
   top: 50px;
-  font-size: 40px;
+  font-size: 70px;
   color: rgb(237, 235, 235);
   font-family: var(--font-family);
-  text-transform: uppercase;
 }
 
 /* Knap til at se alle værker */
-.artgallery-btn button{
+.artgallery-btn button {
   z-index: 999;
   position: absolute;
   bottom: 32px;
   left: 40px;
-  background: #f8c554;
-  padding: 20px 32px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 15px 25px;
   border-radius: 32px;
   cursor: pointer;
-  color: var(--text-color);
   font-family: var(--font-family);
-  font-size: 20px;
-  transition:0.3s ease;
+  font-size: 16px;
+  transition: 0.3s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
 }
 
 .artgallery-btn button:active {
   transform: scale(0.96);
-  background: #bf8c1d;
+  background: #ffffff14;
 }
 
 .all-artworks {
-
   position: fixed;
   inset: 0;
   background: #231d1a;
@@ -358,23 +459,20 @@ body {
 
 .art-grid {
   display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
- justify-items: center;
- justify-content: center;
+  justify-items: center;
+  justify-content: center;
 }
 
 /* card styling i alle værker */
 .grid-card {
-
   background: #f8c554;
   border: 1px solid #f8c554;
   overflow: hidden;
   border-radius: 20px;
   width: 350px;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -382,8 +480,7 @@ body {
 
 .grid-card:active {
   transform: scale(0.97);
-  box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
 /* Stylling af img "alle værker" */
