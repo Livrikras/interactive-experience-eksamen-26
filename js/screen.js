@@ -189,7 +189,9 @@ artscreen.forEach((item) => {
         <span>${item.medium}</span>
       </div>
       <p class="description">${item.description}</p>
-      <button class="story-btn"> Oplev historien ▶ </button>
+      <button class="story-btn">
+      <span class="play-icon">▶</span> 
+      Oplev historien </button>
     </div>
   </div>
   `;
@@ -378,7 +380,7 @@ function setLanguage(language) {
     danishFlag.classList.add("selected");
     englishFlag.classList.remove("selected");
 
-    document.querySelector(".index-titel").textContent = "Klik på et værk";
+    document.querySelector(".index-titel").textContent = "Udforsk samlingen";
 
     document.querySelector(".show-gallery-btn").textContent = "Vis alle værker";
 
