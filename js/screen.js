@@ -12,7 +12,7 @@ const artscreen = [
     size: "56x49 cm",
     description:
       "Frits A. F. Strands Motiver fremstår spontane og livlige, og kunstneren placerer ofte sig selv i centrum af sine billeder. Portrættet viser et enkelt og højtideligt udtryk, hvor fortællingen er vigtigere end den teknisk korrekte gengivelse.",
-    accent: "#756557",
+    accent: "#625449",
     accentSoft: "#5E4427",
     glow: "rgba(169,123,58,0.25)",
     videoDK: "video/frits-dansk.test.mp4",
@@ -25,8 +25,7 @@ const artscreen = [
     year: "1946-",
     medium: "",
     size: "",
-    description:
-      "",
+    description: "",
     accent: "#793635",
     accentSoft: "#4A2E22",
     glow: "rgba(124,75,52,0.25)",
@@ -40,9 +39,8 @@ const artscreen = [
     year: "1942-2008",
     medium: "",
     size: "",
-    description:
-      "",
-    accent: "#9a585f",
+    description: "",
+    accent: "#81494f",
     accentSoft: "#2D4847",
     glow: "rgba(83, 163, 76, 0.25)",
     videoDK: "video/marie-dansk.test.mp4",
@@ -55,8 +53,7 @@ const artscreen = [
     year: "1951-2012",
     medium: "",
     size: "",
-    description:
-      "",
+    description: "",
     accent: "#73824a",
     accentSoft: "#1E2C40",
     glow: "rgba(73,107,151,0.25)",
@@ -70,9 +67,8 @@ const artscreen = [
     year: "1951-1986",
     medium: "",
     size: "",
-    description:
-      "",
-    accent: "#4C7AA5",
+    description: "",
+    accent: "#395c7c",
     accentSoft: "#213845",
     glow: "rgba(76,122,165,0.25)",
     videoDK: "video/patrick-dansk.test.mp4",
