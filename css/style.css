@@ -85,6 +85,41 @@ body {
   align-items: center;
 }
 
+/* Prikker til carousel */
+.carousel-dots {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  display: flex;
+  gap: 12px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.carousel-dot {
+  width: 5%;
+  height: 15px;
+  border-radius: 90%;
+  border: 1px solid rgba(230, 216, 184, 0.8);
+  background: transparent;
+  opacity: 0.55;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: #e6d8b8;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  opacity: 0.9;
+}
+
 .stop-projection-btn {
   position: absolute;
   bottom: 110px;
@@ -236,7 +271,6 @@ body {
   opacity: 0.9;
   margin-bottom: 18px;
 }
-
 
 .artist-name {
   font-size: 32px;
