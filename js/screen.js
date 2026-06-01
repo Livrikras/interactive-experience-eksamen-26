@@ -128,6 +128,9 @@ const nextButton = document.querySelector(".carousel-button.next");
 
 const stopProjectionButton = document.querySelector(".stop-projection-btn");
 
+const dotsContainer = document.querySelector(".carousel-dots");
+const dots = [];
+
 // læser værdi ved localstorage i karrusel
 let currentIndex = Number(localStorage.getItem("carouselIndex"));
 
@@ -227,6 +230,30 @@ const cards = gallery.querySelectorAll(".card-wrapper");
 // tæller hvor mange kort der er
 const cardCount = cards.length;
 
+function createDots() {
+  dotsContainer.innerHTML = "";
+  for (let i = 0; i < cardCount; i += 1) {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel-dot";
+    dot.setAttribute("aria-label", `Gå til værk ${i + 1}`);
+    dot.addEventListener("click", () => {
+      currentIndex = i;
+      updateCards();
+    });
+    dots.push(dot);
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateDots() {
+  dots.forEach((dot, index) => {
+    const active = index === currentIndex;
+    dot.classList.toggle("active", active);
+    dot.setAttribute("aria-current", active ? "true" : "false");
+  });
+}
+
 // funktion som sikrer at kort ikke får negativ værdi og går i rotation
 function updateCards() {
   cards.forEach((card, index) => {
@@ -238,9 +265,18 @@ function updateCards() {
     // tilføjer klasser til kort baseret på lokation
     if (diff === 0) {
       card.classList.add("active"); // aktivt kort
-      document.documentElement.style.setProperty("--accent", artwork.accent || "#1f3b5c");
-      document.documentElement.style.setProperty("--accent-soft", artwork.accentSoft || "#16222e");
-      document.documentElement.style.setProperty("--glow", artwork.glow || "rgba(73,107,151,0.35)");
+      document.documentElement.style.setProperty(
+        "--accent",
+        artwork.accent || "#1f3b5c",
+      );
+      document.documentElement.style.setProperty(
+        "--accent-soft",
+        artwork.accentSoft || "#16222e",
+      );
+      document.documentElement.style.setProperty(
+        "--glow",
+        artwork.glow || "rgba(73,107,151,0.35)",
+      );
     } else if (diff === 1) {
       card.classList.add("next"); // foran
     } else if (diff === cardCount - 1) {
@@ -255,6 +291,8 @@ function updateCards() {
   });
   // gemmer kort i local storage så de stadig er der ved genindlæsning
   localStorage.setItem("carouselIndex", currentIndex);
+
+  updateDots();
 }
 
 // lytter efter klik på knapper og opdaterer currentIndex - +1 -1 for rotation rotation
@@ -269,6 +307,8 @@ nextButton.addEventListener("click", () => {
 
   updateCards();
 });
+
+createDots();
 updateCards();
 
 // swipe-touch på cards i udvalgte værker
