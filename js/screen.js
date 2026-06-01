@@ -366,7 +366,7 @@ function setLanguage(language) {
     danishFlag.classList.remove("selected");
 
     document.querySelector(".index-titel").textContent =
-      "Click and choose a painting";
+      "Explore the collection";
 
     document.querySelector(".show-gallery-btn").textContent =
       "Show all paintings";
@@ -374,6 +374,13 @@ function setLanguage(language) {
     document.querySelector(".back-button").textContent = "← Back";
 
     document.querySelector(".gallery-title").textContent = "All paintings";
+    document.querySelector(".section-title").textContent = "Featured paintings";
+    document.querySelectorAll(".story-btn").forEach((btn) => {
+    btn.innerHTML = `
+    <span class="play-icon">▶</span>
+    Experience the story`;
+  });
+
   }
 
   if (language === "dk") {
@@ -387,6 +394,15 @@ function setLanguage(language) {
     document.querySelector(".back-button").textContent = "← Tilbage";
 
     document.querySelector(".gallery-title").textContent = "Alle værker";
+
+    document.querySelector(".section-title").textContent = "Udvalgte værker";
+
+    document.querySelectorAll(".story-btn").forEach((btn) => {
+    btn.innerHTML = `
+    <span class="play-icon">▶</span>
+    Oplev historien
+  `;
+    });
   }
 }
 
