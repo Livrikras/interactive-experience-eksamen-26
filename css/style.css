@@ -122,23 +122,19 @@ body {
 
 .stop-projection-btn {
   position: absolute;
-  bottom: 110px;
-  padding: 14px 22px;
+  top: 10px;
+  right: 5px;
+  padding: 8px 14px;
   border: 2px solid var(--button-border);
   background: rgba(0, 0, 0, 0.24);
   color: #ffffff;
   border-radius: 999px;
-  cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
   z-index: 3;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
   display: flex;
-  bottom: 50px;
 }
 
-.stop-projection-btn:hover {
+.stop-projection-btn:active {
   transform: translateY(-2px);
 }
 
@@ -218,6 +214,7 @@ body {
 
 .info-side {
   display: flex;
+  position: relative;
   opacity: 0;
   width: 0;
   min-width: 0;
@@ -582,4 +579,104 @@ body {
   font-variant: normal;
   font-weight: 500;
   line-height: 15.4px;
+}
+
+@media (max-width: 1100px) {
+  .carousel-controls {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .gallery {
+    width: min(100%, 920px);
+    height: 460px;
+  }
+
+  .card {
+    width: min(500px, 72vw);
+    height: 420px;
+  }
+
+  .card-wrapper.active .card {
+    width: min(620px, 86vw);
+  }
+
+  .card-wrapper.active .info-side {
+    width: 50%;
+  }
+
+  .card-wrapper.active .image-side {
+    width: 48%;
+  }
+
+  .card-wrapper.prev {
+    transform: translate(calc(-50% - 360px), -50%) scale(0.45);
+  }
+
+  .card-wrapper.next {
+    transform: translate(calc(-50% + 360px), -50%) scale(0.45);
+  }
+
+  .index-titel {
+    font-size: 36px;
+  }
+
+  .all-artworks {
+    padding: 80px 40px;
+  }
+
+  .gallery-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 960px) {
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    width: min(90vw, 520px);
+    height: auto;
+  }
+
+  .card-wrapper.active .card {
+    width: min(95vw, 520px);
+  }
+
+  .card-wrapper.active .image-side,
+  .card-wrapper.active .info-side {
+    width: 100%;
+  }
+
+  .card-wrapper.active .info-side {
+    padding: 26px 20px;
+  }
+
+  .card-wrapper.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    width: min(100%, 720px);
+    height: 380px;
+  }
+
+  .card {
+    width: min(420px, 80vw);
+    height: 360px;
+  }
+
+  .card-wrapper.active .card {
+    width: min(90vw, 520px);
+  }
+
+  .card-wrapper.active .info-side {
+    width: 48%;
+    padding: 34px 24px;
+  }
+
+  .card-wrapper.active .image-side {
+    width: 52%;
+  }
 }

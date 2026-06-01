@@ -9,9 +9,12 @@ const artscreen = [
     name: "Frits A. F. Strand",
     year: "1853-1936",
     medium: "Olie på lærred",
+    mediumEN: "Oil on canvas",
     size: "56x49 cm",
     description:
       "Frits A. F. Strands Motiver fremstår spontane og livlige, og kunstneren placerer ofte sig selv i centrum af sine billeder. Portrættet viser et enkelt og højtideligt udtryk, hvor fortællingen er vigtigere end den teknisk korrekte gengivelse.",
+    descriptionEN:
+      "Frits A. F. Strand's motifs appear spontaneous and lively, and the artist often places himself at the center of his paintings. The portrait shows a simple and solemn expression, where the narrative is more important than the technically correct representation.",
     accent: "#625449",
     accentSoft: "#5E4427",
     glow: "rgba(169,123,58,0.25)",
@@ -24,8 +27,11 @@ const artscreen = [
     name: "Jette Hansen",
     year: "1946-",
     medium: "Oliekridt",
+    mediumEN: "Oil pastels",
     description:
       "Portrættet er kendetegnet ved et flydende og grænseløst univers, hvor figurer og genstande ofte bliver brat afskåret af billedrammen. Historierne synes at fortsætte uden for værket, og figurerne forholder sig ikke til traditionelle retninger som lodret og vandret.",
+    descriptionEN:
+      "The portrait is characterized by a flowing and boundless universe, where figures and objects are often sharply cut off by the picture frame. The stories seem to continue beyond the artwork, and the figures do not relate to traditional directions such as vertical and horizontal.",
     accent: "#793635",
     accentSoft: "#4A2E22",
     glow: "rgba(124,75,52,0.25)",
@@ -38,8 +44,11 @@ const artscreen = [
     name: "Marie Heiberg",
     year: "1942-2008",
     medium: "Olie på lærred",
+    mediumEN: "Oil on canvas",
     description:
       "Marie Heribergs værker er både dramatiske og følsomme og præget af en sart melankoli, som understreges af kunstnerens blå farveunivers. Portrættet rummer klovneagtige figurer, der bevæger sig mellem tristhed og håb. ",
+    descriptionEN:
+      "Marie Heriberg's works are both dramatic and sensitive, characterized by a delicate melancholy, which is emphasized by the artist's blue color universe. The portrait contains clown-like figures that move between sadness and hope.",
     accent: "#81494f",
     accentSoft: "#2D4847",
     glow: "rgba(83, 163, 76, 0.25)",
@@ -52,9 +61,11 @@ const artscreen = [
     name: "Ole Norge",
     year: "1951-2012",
     medium: "Oliekridt",
+    mediumEN: "Oil pastels",
     description:
       "Ole Norges værker er farverige, men rummer samtidig en stor skrøbelighed. Motiverne opløses ofte i farvefelter, linjer og former. Portrættet viser en ung mand med gyldent hår og mørke, skræmte øjne, der ser direkte på beskueren.",
-    accent: "#73824a",
+    descriptionEN:
+      "Ole Norge's works are colorful, yet fragile. The motifs often dissolve into fields of color, lines, and shapes. The portrait depicts a young man with golden hair and dark, frightened eyes looking directly at the viewer.",
     accentSoft: "#1E2C40",
     glow: "rgba(73,107,151,0.25)",
     videoDK: "video/ole-dansk.test.mp4",
@@ -66,8 +77,11 @@ const artscreen = [
     name: "Patrick Larsen",
     year: "1951-1986",
     medium: "Oliekridt",
+    mediumEN: "Oil pastels",
     description:
       "Patrick Larsens lag på lag-maleteknik giver billederne en stærk følelsesmæssig intensitet, og den gennemgående gule farve balancerer mellem smerte og ulykke. Portrættet skildrer samfundets bagside med temaer som magtesløshed og nederlag. ",
+    descriptionEN:
+      "Patrick Larsen's layer upon layer painting technique gives the images a strong emotional intensity, and the predominant yellow color balances between pain and misfortune. The portrait depicts the dark side of society with themes such as powerlessness and defeat.",
     accent: "#395c7c",
     accentSoft: "#213845",
     glow: "rgba(76,122,165,0.25)",
@@ -126,8 +140,6 @@ const prevButton = document.querySelector(".carousel-button.prev");
 
 const nextButton = document.querySelector(".carousel-button.next");
 
-const stopProjectionButton = document.querySelector(".stop-projection-btn");
-
 const dotsContainer = document.querySelector(".carousel-dots");
 const dots = [];
 
@@ -157,21 +169,25 @@ function openProjectionWindow() {
 }
 
 function showStopProjectionButton() {
-  stopProjectionButton.classList.remove("is-hidden");
+  const stopButtons = document.querySelectorAll(".stop-projection-btn");
+  stopButtons.forEach((button) => button.classList.remove("is-hidden"));
 }
 
 function hideStopProjectionButton() {
-  stopProjectionButton.classList.add("is-hidden");
+  const stopButtons = document.querySelectorAll(".stop-projection-btn");
+  stopButtons.forEach((button) => button.classList.add("is-hidden"));
 }
 
 // Koden tjekker om projectionWindow findes og er åbent.
 // Hvis ja: sendes en besked { action: "stop" } til det andet browser-vindue via postMessage().
-stopProjectionButton.addEventListener("click", () => {
-  if (projectionWindow && !projectionWindow.closed) {
-    projectionWindow.postMessage({ action: "stop" }, "*");
-  }
+gallery.addEventListener("click", (e) => {
+  if (e.target.closest(".stop-projection-btn")) {
+    if (projectionWindow && !projectionWindow.closed) {
+      projectionWindow.postMessage({ action: "stop" }, "*");
+    }
 
-  hideStopProjectionButton();
+    hideStopProjectionButton();
+  }
 });
 
 artscreen.forEach((item) => {
@@ -186,6 +202,7 @@ artscreen.forEach((item) => {
     </div>
 
     <div class="info-side">
+      <button class="stop-projection-btn is-hidden" type="button">X</button>
       <span class="card-year">${item.year}</span>
       <h2 class="artist-name">${item.name}</h2>
       <div class="meta">
@@ -416,11 +433,17 @@ function setLanguage(language) {
     document.querySelector(".gallery-title").textContent = "All paintings";
     document.querySelector(".section-title").textContent = "Featured paintings";
     document.querySelectorAll(".story-btn").forEach((btn) => {
-    btn.innerHTML = `
+      btn.innerHTML = `
     <span class="play-icon">▶</span>
     Experience the story`;
-  });
+    });
+    cards.forEach((card, index) => {
+      const artwork = artscreen[index];
 
+      card.querySelector(".meta span").textContent = artwork.mediumEN;
+
+      card.querySelector(".description").textContent = artwork.descriptionEN;
+    });
   }
 
   if (language === "dk") {
@@ -438,10 +461,17 @@ function setLanguage(language) {
     document.querySelector(".section-title").textContent = "Udvalgte værker";
 
     document.querySelectorAll(".story-btn").forEach((btn) => {
-    btn.innerHTML = `
+      btn.innerHTML = `
     <span class="play-icon">▶</span>
     Oplev historien
   `;
+    });
+    cards.forEach((card, index) => {
+      const artwork = artscreen[index];
+
+      card.querySelector(".meta span").textContent = artwork.medium;
+
+      card.querySelector(".description").textContent = artwork.description;
     });
   }
 }
