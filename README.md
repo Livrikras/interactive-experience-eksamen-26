@@ -128,4 +128,7 @@ Vi har ikke anvedt JavaScript biblioteker. Men vi har brugt GitHub til samarbejd
 >Link til GitHub Repository: 
  https://github.com/Livrikras/interactive-experience-eksamen-26.git
 
+> Link til GitHub pages:
+    https://livrikras.github.io/interactive-experience-eksamen-26/ 
+
 ![Github](img/github.png)
