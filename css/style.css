@@ -1,3 +1,4 @@
+/* Variabler så de kan bruges i hele CSS'en */
 :root {
   --background-color: #231d1a;
   --text-color: #2a2a2a;
@@ -10,6 +11,7 @@
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* Styling på overskrifter og tekst */
 h1 {
   font-family: var(--font-family);
   font-size: 24px;
@@ -18,6 +20,7 @@ h1 {
   font-weight: 300;
   line-height: 26.4px;
 }
+
 h3 {
   font-family: var(--font-family);
   font-size: 14px;
@@ -26,6 +29,7 @@ h3 {
   font-weight: 700;
   line-height: 15.4px;
 }
+
 p {
   font-family: var(--font-family);
   font-size: 14px;
@@ -34,6 +38,8 @@ p {
   font-weight: 400;
   line-height: 20px;
 }
+
+/* Styling på citater */
 blockquote {
   font-family: var(--font-family);
   font-size: 21px;
@@ -42,6 +48,8 @@ blockquote {
   font-weight: 400;
   line-height: 30px;
 }
+
+/* Styling på præformateret tekst */
 pre {
   font-family: var(--font-family);
   font-size: 13px;
@@ -51,6 +59,7 @@ pre {
   line-height: 18.57143px;
 }
 
+/* Styling på baggrunden */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -73,6 +82,7 @@ body {
   flex-direction: column;
 }
 
+/* Styling på carousel */
 .carousel-controls {
   position: absolute;
   top: 50%;
@@ -120,6 +130,7 @@ body {
   opacity: 0.9;
 }
 
+/* Styling på stop-projection-knap */
 .stop-projection-btn {
   position: absolute;
   top: 10px;
@@ -142,6 +153,7 @@ body {
   display: none !important;
 }
 
+/* Styling på carousel-knapper */
 .carousel-button {
   width: 64px;
   height: 64px;
@@ -178,6 +190,7 @@ body {
   border-color: #ffffff;
 }
 
+/* Styling på selve galleri */
 .gallery {
   position: relative;
   width: 1400px;
@@ -212,6 +225,7 @@ body {
   background: var(--accent);
 }
 
+/* Styling på info-side */
 .info-side {
   display: flex;
   position: relative;
@@ -246,10 +260,12 @@ body {
   width: 58%;
 }
 
+/* Styling på side-overlay */
 .side-overlay {
   display: none;
 }
 
+/* Styling på årstal */
 .side-year {
   margin-bottom: 12px;
   font-size: 12px;
@@ -259,6 +275,7 @@ body {
   opacity: 0.9;
 }
 
+/* Styling på kort-årstal */
 .card-year {
   display: inline-block;
   font-size: 12px;
@@ -269,6 +286,7 @@ body {
   margin-bottom: 18px;
 }
 
+/* Styling på kunstner-navn */
 .artist-name {
   font-size: 32px;
   font-weight: 300;
@@ -278,6 +296,7 @@ body {
   margin-bottom: 12px;
 }
 
+/* Styling på meta-informations-sektionen */
 .meta {
   display: flex;
   flex-direction: column;
@@ -292,6 +311,7 @@ body {
   display: block;
 }
 
+/* Styling på beskrivelse */
 .description {
   line-height: 1.8;
   opacity: 1;
@@ -299,6 +319,7 @@ body {
   color: #e6e6e6;
 }
 
+/* Styling på historie-knap */
 .story-btn {
   border: 1px solid #e6d8b8;
   display: flex;
@@ -318,6 +339,7 @@ body {
   background: rgba(255, 255, 255, 0.16);
 }
 
+/* Styling på kort-info */
 .card-info {
   display: flex;
   justify-content: space-between;
@@ -328,6 +350,7 @@ body {
   color: #2a2a2a;
 }
 
+/* Styling på kort-navn og år */
 .card-name,
 .years {
   font-size: 13px;
@@ -335,6 +358,7 @@ body {
   font-weight: 700;
 }
 
+/* Styling på card-wrapper */
 .card-wrapper {
   position: absolute;
   left: 50%;
@@ -408,6 +432,7 @@ body {
   z-index: 0;
 }
 
+/* Styling på sprog-skift */
 .language-switch {
   position: fixed;
   right: 40px;
@@ -465,6 +490,7 @@ body {
   background: #ffffff14;
 }
 
+/* Styling på "Alle værker" sektionen */
 .all-artworks {
   position: fixed;
   inset: 0;
@@ -486,6 +512,7 @@ body {
   transform: translateY(0);
 }
 
+/* Galleri-overskrift */
 .gallery-title {
   text-align: center;
   color: white;
@@ -495,6 +522,7 @@ body {
   margin-bottom: 80px;
 }
 
+/* Galleri-grid */
 .art-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -563,6 +591,7 @@ body {
   transform: scale(0.95);
 }
 
+/* under rubrik til titlen på skærmen */
 .section-title {
   position: absolute;
   top: 30px;
@@ -581,6 +610,7 @@ body {
   line-height: 15.4px;
 }
 
+/* Media queries for responsivt design */
 @media (max-width: 1100px) {
   .carousel-controls {
     width: 100%;
