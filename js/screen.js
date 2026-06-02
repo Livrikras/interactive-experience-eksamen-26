@@ -2,7 +2,7 @@
 
 let currentLanguage = localStorage.getItem("language") || "dk";
 
-const artscreen = [
+const artScreen = [
   {
     id: 1,
     image: "img/frits-albert-florentinus-strand.png",
@@ -190,7 +190,7 @@ gallery.addEventListener("click", (e) => {
   }
 });
 
-artscreen.forEach((item) => {
+artScreen.forEach((item) => {
   const wrapper = document.createElement("div");
 
   wrapper.className = "card-wrapper";
@@ -277,7 +277,7 @@ function updateCards() {
     card.className = "card-wrapper";
 
     const diff = (index - currentIndex + cardCount) % cardCount;
-    const artwork = artscreen[index];
+    const artwork = artScreen[index];
 
     // tilføjer klasser til kort baseret på lokation
     if (diff === 0) {
@@ -362,7 +362,7 @@ const backButton = document.querySelector(".back-button");
 
 const artGrid = document.querySelector(".art-grid");
 
-[...artscreen, ...extraArtworks].forEach((item) => {
+[...artScreen, ...extraArtworks].forEach((item) => {
   const card = document.createElement("div");
 
   card.classList.add("grid-card");
@@ -438,7 +438,7 @@ function setLanguage(language) {
     Experience the story`;
     });
     cards.forEach((card, index) => {
-      const artwork = artscreen[index];
+      const artwork = artScreen[index];
 
       card.querySelector(".meta span").textContent = artwork.mediumEN;
 
@@ -467,7 +467,7 @@ function setLanguage(language) {
   `;
     });
     cards.forEach((card, index) => {
-      const artwork = artscreen[index];
+      const artwork = artScreen[index];
 
       card.querySelector(".meta span").textContent = artwork.medium;
 
