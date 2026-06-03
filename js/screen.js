@@ -1,7 +1,9 @@
 "use strict";
 
+// Gem brugerens valgte sprog (dansk eller engelsk) fra forrige besøg
 let currentLanguage = localStorage.getItem("language") || "dk";
 
+// Udvalgte kunstnerportrætter med billeder, beskrivelser og videoer på dansk og engelsk
 const artScreen = [
   {
     id: 1,
@@ -90,6 +92,7 @@ const artScreen = [
   },
 ];
 
+// Yderligere kunstnere vist i galleriet (uden fuld beskrivelse)
 const extraArtworks = [
   {
     id: 6,
@@ -134,18 +137,15 @@ const extraArtworks = [
   },
 ];
 
+// Vælg og gem DOM-elementer til karussel og navigationskontrol
 const gallery = document.querySelector(".gallery");
-
 const prevButton = document.querySelector(".carousel-button.prev");
-
 const nextButton = document.querySelector(".carousel-button.next");
-
 const dotsContainer = document.querySelector(".carousel-dots");
 const dots = [];
 
 // læser værdi ved localstorage i karrusel
 let currentIndex = Number(localStorage.getItem("carouselIndex"));
-
 if (!Number.isFinite(currentIndex)) {
   currentIndex = 0;
 }
@@ -156,6 +156,7 @@ let projectionWindow = window.open(
   "width=1000, height=700",
 );
 
+// Åbn eller genåbn projektionsvinduet hvis det er lukket
 function openProjectionWindow() {
   if (!projectionWindow || projectionWindow.closed) {
     projectionWindow = window.open(
@@ -168,11 +169,13 @@ function openProjectionWindow() {
   return projectionWindow;
 }
 
+// Vis knappen til at stoppe videoafspilningen
 function showStopProjectionButton() {
   const stopButtons = document.querySelectorAll(".stop-projection-btn");
   stopButtons.forEach((button) => button.classList.remove("is-hidden"));
 }
 
+// Skjul stopknappen når videoen er stoppet
 function hideStopProjectionButton() {
   const stopButtons = document.querySelectorAll(".stop-projection-btn");
   stopButtons.forEach((button) => button.classList.add("is-hidden"));
@@ -219,6 +222,7 @@ artScreen.forEach((item) => {
   wrapper.style.setProperty("--accent-soft", item.accentSoft || "#16222e");
   wrapper.style.setProperty("--glow", item.glow || "rgba(73,107,151,0.25)");
 
+  // Åbn og afspil video når kunstnerportrættet klikkes
   wrapper.addEventListener("click", () => {
     const selectedVideo =
       currentLanguage === "en" ? item.videoEN : item.videoDK;
@@ -241,12 +245,13 @@ artScreen.forEach((item) => {
   // tilføjer wrapper til næste i rækken
   gallery.appendChild(wrapper);
 });
+
 // finder alle elementer med klassen card-wrapper galleriet
 const cards = gallery.querySelectorAll(".card-wrapper");
-
 // tæller hvor mange kort der er
 const cardCount = cards.length;
 
+// Opret navigationspunkter (dots) for at navigere til hvert kunstnerportræt
 function createDots() {
   dotsContainer.innerHTML = "";
   for (let i = 0; i < cardCount; i += 1) {
@@ -254,6 +259,7 @@ function createDots() {
     dot.type = "button";
     dot.className = "carousel-dot";
     dot.setAttribute("aria-label", `Gå til værk ${i + 1}`);
+    // Skift til kort nr. i når dot klikkes
     dot.addEventListener("click", () => {
       currentIndex = i;
       updateCards();
@@ -263,8 +269,10 @@ function createDots() {
   }
 }
 
+// Opdater visuelle tilstand af navigationspunkterne (aktiv/inaktiv)
 function updateDots() {
   dots.forEach((dot, index) => {
+    // Markér det nuværende navigationspunkt som aktivt
     const active = index === currentIndex;
     dot.classList.toggle("active", active);
     dot.setAttribute("aria-current", active ? "true" : "false");
@@ -273,6 +281,7 @@ function updateDots() {
 
 // funktion som sikrer at kort ikke får negativ værdi og går i rotation
 function updateCards() {
+  // Loop gennem alle kort og tilføj passende CSS-klasser baseret på position
   cards.forEach((card, index) => {
     card.className = "card-wrapper";
 
@@ -282,6 +291,7 @@ function updateCards() {
     // tilføjer klasser til kort baseret på lokation
     if (diff === 0) {
       card.classList.add("active"); // aktivt kort
+      // Opdater siden farvevariabler baseret på aktivt kunstnerportræt
       document.documentElement.style.setProperty(
         "--accent",
         artwork.accent || "#1f3b5c",
@@ -312,32 +322,30 @@ function updateCards() {
   updateDots();
 }
 
-// lytter efter klik på knapper og opdaterer currentIndex - +1 -1 for rotation rotation
+// Gå til forrige kunstnerportræt i karusellet
 prevButton.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + cardCount) % cardCount;
-
   updateCards();
 });
 
+// Gå til næste kunstnerportræt i karusellet
 nextButton.addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % cardCount;
-
   updateCards();
 });
 
 createDots();
 updateCards();
 
-// swipe-touch på cards i udvalgte værker
-// gemmer start position for touch event
+// Håndter touch-swipe gestures på mobil enhed for at navigere karusellet
 let fingerStart = 0;
 
-// Når fingeren rammer skærmen, gemmes dens vandrette position i pixels.
+// Registrer startposition når finger rammer skærmen
 gallery.addEventListener("touchstart", (event) => {
   fingerStart = event.touches[0].clientX;
 });
 
-// når finger løftes sammenlignes den med start position hvis den er 50 pixels til højre eller venstre
+// Beregn swipe-retning og navigér karusellet hvis swipe er stor nok (>50px)
 gallery.addEventListener("touchend", (event) => {
   let fingerEnd = event.changedTouches[0].clientX;
   let swipe = fingerStart - fingerEnd;
@@ -354,17 +362,15 @@ gallery.addEventListener("touchend", (event) => {
   }
 });
 
+// Vælg DOM-elementer til galleriet og kunstnersamling
 const showGalleryBtn = document.querySelector(".show-gallery-btn");
-
 const allArtworks = document.querySelector(".all-artworks");
-
 const backButton = document.querySelector(".back-button");
-
 const artGrid = document.querySelector(".art-grid");
 
+// Opret gitterkort for alle kunstnerportrætter i fuld gallerioversigt
 [...artScreen, ...extraArtworks].forEach((item) => {
   const card = document.createElement("div");
-
   card.classList.add("grid-card");
 
   card.innerHTML = `
@@ -382,6 +388,7 @@ const artGrid = document.querySelector(".art-grid");
   `;
 
   if (item.videoDK && item.videoEN) {
+    // Afspil video i projektion når gitterkortet klikkes
     card.addEventListener("click", () => {
       const selectedVideo =
         currentLanguage === "en" ? item.videoEN : item.videoDK;
@@ -402,20 +409,22 @@ const artGrid = document.querySelector(".art-grid");
   artGrid.appendChild(card);
 });
 
+// Vis fuld gallerioversigt når knap klikkes
 showGalleryBtn.addEventListener("click", () => {
   allArtworks.classList.add("active");
 });
 
+// Luk gallerioversigt og gå tilbage til karusellet
 backButton.addEventListener("click", () => {
   allArtworks.classList.remove("active");
 });
 
+// Sprogvalg - flag for at skifte mellem dansk og engelsk
 const englishFlag = document.querySelector("#englishFlag");
 const danishFlag = document.querySelector("#danishFlag");
 
 function setLanguage(language) {
   currentLanguage = language;
-
   localStorage.setItem("language", language);
 
   if (language === "en") {
@@ -446,6 +455,7 @@ function setLanguage(language) {
     });
   }
 
+  // Skift til dansk
   if (language === "dk") {
     danishFlag.classList.add("selected");
     englishFlag.classList.remove("selected");
@@ -476,6 +486,7 @@ function setLanguage(language) {
   }
 }
 
+// Håndter klik på sprogflag for at skifte sprog
 englishFlag.addEventListener("click", () => {
   setLanguage("en");
 });
