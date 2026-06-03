@@ -52,6 +52,25 @@ Vi har brugt camel case på variabler og funktioner, hvor det andet ord får et 
 * Vi har dog brugt kebab case til classes i html og css
 
 ## Fremhævet kode
+`````
+js //linje 159-169
+
+function openProjectionWindow() {
+  if (!projectionWindow || projectionWindow.closed) {
+    projectionWindow = window.open(
+      "projection.html",
+      "_blank",
+      "width=1000, height=700",
+    );
+  }
+
+  return projectionWindow;
+}
+`````
+
+`````
+
+`````
 
 ## ORCA-model
 ![ORCA-model](img/orca.png)
