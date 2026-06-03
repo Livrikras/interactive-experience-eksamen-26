@@ -53,8 +53,9 @@ Vi har brugt camel case på variabler og funktioner, hvor det andet ord får et 
 
 ## Fremhævet kode
 `````
-js //linje 159-169
+js //linje 159-170
 
+// Åbn eller genåbn projektionsvinduet hvis det er lukket
 function openProjectionWindow() {
   if (!projectionWindow || projectionWindow.closed) {
     projectionWindow = window.open(
@@ -69,7 +70,31 @@ function openProjectionWindow() {
 `````
 
 `````
+js // linje 225-247
 
+// Åbn og afspil video når kunstnerportrættet klikkes
+  wrapper.addEventListener("click", () => {
+    const selectedVideo =
+      currentLanguage === "en" ? item.videoEN : item.videoDK;
+
+    localStorage.setItem("selectedPortrait", selectedVideo);
+
+    const win = openProjectionWindow();
+
+    if (win && !win.closed) {
+      win.postMessage(
+        {
+          video: selectedVideo,
+        },
+        "*",
+      );
+
+      showStopProjectionButton();
+    }
+  });
+  // tilføjer wrapper til næste i rækken
+  gallery.appendChild(wrapper);
+  });
 `````
 
 ## ORCA-model
