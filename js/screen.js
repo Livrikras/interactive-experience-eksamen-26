@@ -309,7 +309,7 @@ function updateCards() {
   updateDots();
 }
 
-// Gå til forrige kunstnerportræt i karusellet
+// Gå til forrige kunstnerportræt i karusellet - tilføjet klik eventlisterne på karrusel, så den navigerer til + og - 1 i differencen
 prevButton.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + cardCount) % cardCount;
   updateCards();
