@@ -291,19 +291,6 @@ function updateCards() {
     // tilføjer klasser til kort baseret på lokation
     if (diff === 0) {
       card.classList.add("active"); // aktivt kort
-      // Opdater siden farvevariabler baseret på aktivt kunstnerportræt
-      document.documentElement.style.setProperty(
-        "--accent",
-        artwork.accent || "#1f3b5c",
-      );
-      document.documentElement.style.setProperty(
-        "--accent-soft",
-        artwork.accentSoft || "#16222e",
-      );
-      document.documentElement.style.setProperty(
-        "--glow",
-        artwork.glow || "rgba(73,107,151,0.35)",
-      );
     } else if (diff === 1) {
       card.classList.add("next"); // foran
     } else if (diff === cardCount - 1) {
