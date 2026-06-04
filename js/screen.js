@@ -68,7 +68,8 @@ const artScreen = [
       "Ole Norges værker er farverige, men rummer samtidig en stor skrøbelighed. Motiverne opløses ofte i farvefelter, linjer og former. Portrættet viser en ung mand med gyldent hår og mørke, skræmte øjne, der ser direkte på beskueren.",
     descriptionEN:
       "Ole Norge's works are colorful, yet fragile. The motifs often dissolve into fields of color, lines, and shapes. The portrait depicts a young man with golden hair and dark, frightened eyes looking directly at the viewer.",
-    accentSoft: "#1E2C40",
+      accent: "#4e5e32",
+      accentSoft: "#1E2C40",
     glow: "rgba(73,107,151,0.25)",
     videoDK: "video/ole-dansk.mp4",
     videoEN: "video/ole-engelsk.mp4",

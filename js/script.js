@@ -28,7 +28,7 @@ window.addEventListener("message", (event) => {
 function stopProjection() {
   videoElement.pause();
   videoElement.src = "";
-  document.body.style.backgroundColor = "#564A45";
+  document.body.style.backgroundColor = "#000000";
 }
 
 // Stop automatisk når videoen slutter
