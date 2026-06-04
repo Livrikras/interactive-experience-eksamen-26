@@ -610,6 +610,7 @@ body {
   line-height: 15.4px;
 }
 
+
 /* Media queries for responsivt design */
 @media (max-width: 1100px) {
   .carousel-controls {
@@ -710,3 +711,5 @@ body {
     width: 52%;
   }
 }
+
+

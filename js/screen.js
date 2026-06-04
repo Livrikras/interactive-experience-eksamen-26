@@ -68,7 +68,8 @@ const artScreen = [
       "Ole Norges værker er farverige, men rummer samtidig en stor skrøbelighed. Motiverne opløses ofte i farvefelter, linjer og former. Portrættet viser en ung mand med gyldent hår og mørke, skræmte øjne, der ser direkte på beskueren.",
     descriptionEN:
       "Ole Norge's works are colorful, yet fragile. The motifs often dissolve into fields of color, lines, and shapes. The portrait depicts a young man with golden hair and dark, frightened eyes looking directly at the viewer.",
-    accentSoft: "#1E2C40",
+      accent: "#4e5e32",
+      accentSoft: "#1E2C40",
     glow: "rgba(73,107,151,0.25)",
     videoDK: "video/ole-dansk.mp4",
     videoEN: "video/ole-engelsk.mp4",
@@ -291,19 +292,6 @@ function updateCards() {
     // tilføjer klasser til kort baseret på lokation
     if (diff === 0) {
       card.classList.add("active"); // aktivt kort
-      // Opdater siden farvevariabler baseret på aktivt kunstnerportræt
-      document.documentElement.style.setProperty(
-        "--accent",
-        artwork.accent || "#1f3b5c",
-      );
-      document.documentElement.style.setProperty(
-        "--accent-soft",
-        artwork.accentSoft || "#16222e",
-      );
-      document.documentElement.style.setProperty(
-        "--glow",
-        artwork.glow || "rgba(73,107,151,0.35)",
-      );
     } else if (diff === 1) {
       card.classList.add("next"); // foran
     } else if (diff === cardCount - 1) {
@@ -322,7 +310,7 @@ function updateCards() {
   updateDots();
 }
 
-// Gå til forrige kunstnerportræt i karusellet
+// Gå til forrige kunstnerportræt i karusellet - tilføjet klik eventlisterne på karrusel, så den navigerer til + og - 1 i differencen
 prevButton.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + cardCount) % cardCount;
   updateCards();
