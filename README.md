@@ -381,6 +381,7 @@ Vi har blandt andet arbejdet med:
 
 Disse har gjort det muligt at skabe en interaktiv installation, hvor brugerens valg påvirker det indhold, der vises på projektionen.
 
+
 ### 13.1 Links
 > Link til GitHub Repository:
 > https://github.com/Livrikras/interactive-experience-eksamen-26.git
@@ -389,3 +390,21 @@ Disse har gjort det muligt at skabe en interaktiv installation, hvor brugerens v
 https://livrikras.github.io/interactive-experience-eksamen-26/
 
 ![Github](img/github.png)
+
+
+## 14. Brug af AI-værktøjer
+I vores projekt har vi undervejs brugt AI som et digitalt værktøj til at samarbejde og vejlede under forløbet. Vi har til projektet brugt ChatGPT, Higgsfield, 11Labs, Weavi.ai og CoPilot (VScode)
+
+* __Fejlsøgning og spørgsmål:__ Vi har brugt CoPilot til JavaScript i VS code til at vejlede ift. eventuelle spørgsmål eller fejl i selve koden.
+
+* __Kunstneres tanker til installation:__ Vi har brugt ChatGPT til at give inspiration til kunstnernes tanker og følelser i vores installation, vi har brugt chatten som samarbejdspartner her, for at analysere deres tanker og følelser, baseret på den information vi har fået fra museets om kunstnerne. https://chatgpt.com/share/6a267e50-44c8-83eb-8f32-50e0850fb079 og https://chatgpt.com/share/6a267e7e-a600-83eb-be44-7d104867325f (Link hentet: 8/6/2026)
+
+* __Moodboard og inspiration til storyboard:__ Vi har brugt ChatGPT til at teste vores ide, hvor vi har fået chatten til at visualisere vores installation i rummet, samt give en lidt mere specifik vibe og følelse til moodboard. Dette gør det nemmere for vores BERT testpersonerne at få fornemmelse for installationen. https://chatgpt.com/share/6a267f9b-28d4-83ed-98c4-4a640d3f6226 (Link hentet: 8/6/2026)
+
+* __Billeder til designoplæg:__ Vi har brugt Higgsfield og Weavi.ai  til at genere billederne til vores designoplæg, hvor vi viser et mere detaljeret overblik over oplevelsen. (Med Higgsfield og Weavi.ai, kan vi ikke linke til chatten, da det er en privat account. Derfor har vi tilføjet billeder ind i stedet)(Sat ind d. 8/6/2026)
+
+
+* __Engelske voiceover og baggrundslyde:__ Vi har brugt 11Labs til at genere engelske voiceovers, i stedet for at indtale dem som vi har gjort med de danske. Med 11Labs har vi brugt forskellige stemmer til at give den rette stemning for hver kunstner. Vi har også brugt 11Labs til at lave baggrundsmusik og effekter til de danske voiceovers.
+
+
+Vi har brugt AI som både en samarbejdspartner men også til at designe lyd osv. som skulle bruges i vores installation. AI hjælp og lyde er blevet tilpasset, testet og redigeret i, så vi har fuld forståelse og intention for alt hvad vi har sat ind.
