@@ -61,7 +61,7 @@ Vi har brugt "W3C CSS Validation Service" og "W3C Markup Validation Service"
 
 ## 2. Collaborations
 
-- Projektet er udviklet i fællesskab gennem GitHub med i alt ca. 162 commits
+- Projektet er udviklet i fællesskab gennem GitHub med i alt ca. 180 commits
 - Vi har arbejdet med push og pull for at sikre en struktureret udviklingsproces
 - Vi har løbende testet og gennemgået koden
 - Vi har delt opgaver ud på baggrund af interesse og kompetencer. Men alle medlemmer har bidraget til idéudvikling, design og udførslen
