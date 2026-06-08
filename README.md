@@ -422,4 +422,8 @@ Vi har brugt AI som både en samarbejdspartner men også til at designe lyd osv.
 > Link til GitHub pages:
 https://livrikras.github.io/interactive-experience-eksamen-26/
 
+> Link til Figjam prototypeovervejelser:
+https://www.figma.com/board/lviRj5y9PbhhurSHJGAFDd/Double-Diamond?node-id=1-123
+
 ![Github](img/github.png)
+
