@@ -169,7 +169,6 @@ function openProjectionWindow() {
 
   return projectionWindow;
 }
-
 // Vis knappen til at stoppe videoafspilningen
 function showStopProjectionButton() {
   const stopButtons = document.querySelectorAll(".stop-projection-btn");
@@ -181,7 +180,6 @@ function hideStopProjectionButton() {
   const stopButtons = document.querySelectorAll(".stop-projection-btn");
   stopButtons.forEach((button) => button.classList.add("is-hidden"));
 }
-
 // Koden tjekker om projectionWindow findes og er åbent.
 // Hvis ja: sendes en besked { action: "stop" } til det andet browser-vindue via postMessage().
 gallery.addEventListener("click", (e) => {
@@ -204,7 +202,6 @@ artScreen.forEach((item) => {
     <div class="image-side">
       <img src="${item.image}" alt="${item.name}" class="painting">
     </div>
-
     <div class="info-side">
       <button class="stop-projection-btn is-hidden" type="button">X</button>
       <span class="card-year">${item.year}</span>
