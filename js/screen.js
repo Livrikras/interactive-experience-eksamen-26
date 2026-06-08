@@ -482,3 +482,4 @@ englishFlag.addEventListener("click", () => {
 danishFlag.addEventListener("click", () => {
   setLanguage("dk");
 });
+

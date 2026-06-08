@@ -36,7 +36,7 @@ Vi har brugt "W3C CSS Validation Service" og "W3C Markup Validation Service"
 
 ## 3. Web konventioner
 
-når man udvikler webprojekter, er det vigtigt at navngive filer og mapper korrekt samt organisere projektet på en overskuelig måde. Det gør at projektet er lettere at vedligeholde. I vores projekt har vi navngivet alle filer og mapper med små bogstaver. Derudover har ikke mellemrum eller danske specialtegn som æ, ø og å. Vi har anvendt en konsekvent navngivningsstruktur, for at gøre det lettere for os at samarbejde. Det giver også ensartethed.
+For at holde projektet overskueligt valgte vi fra starten at følge nogle faste navngivningsregler. Alle filer og mapper er skrevet med små bogstaver, og vi har undgået mellemrum samt danske specialtegn som æ, ø og å. Det gjorde samarbejdet lettere, fordi alle arbejdede efter samme struktur, og samtidig blev projektet mere enkelt at vedligeholde.
 
 ## 4. Navne på mapper og filer
 
@@ -88,7 +88,7 @@ indeholder videofiler til de forskellige kunstværker
 
 ## 6. Navne på variable og funktioner
 
-Vi har navngivet variablerne og funktionerne ud fra deres formål i programmet. Dette gør koden mere læsbar og lettere at forstå for os, som en gruppe. 
+Vi har navngivet variablerne og funktionerne ud fra deres formål. Dette gør koden mere læsbar og lettere at forstå for os, som en gruppe. 
 
 Eksempel:
 
@@ -102,6 +102,7 @@ indeholder data om kunstværkerne i installationen.
 let projectionWindow;
 ```
 referer til projektvinduet, hvor videoerne afspilles.
+
 Vi har konsekvent anvendt camelCase til JavaScript-variabler og funktioner, hvor det første ord skrives med lille begyndelsesbogstav og efterfølgende ord starter med stort bogstav
 
 Eksempler:
@@ -199,6 +200,7 @@ Eksempelvis blev attributter som kunstner, årstal, materiale, beskrivelse og vi
 - `descriptionEN`
 - `videoDK`
 - `videoEN`
+- `accent`
 
 Denne mapping gjorde det muligt at skabe en tydelig sammenhæng mellem konceptudviklingen, informationsarkitekturen og den tekniske implementering.
 ```
@@ -218,9 +220,12 @@ const artScreen = [
     descriptionEN: "Frits A. F. Strand's motifs appear spontaneous and lively, and the artist often places himself at the center of his paintings. The portrait shows a simple and solemn expression, where the narrative is more important than the technically correct representation.",
     videoDK: "video/frits-dansk.test.mp4",
     videoEN: "video/frits-engelsk.test.mp4",
+
   }
 ];
 ```
+
+Udover dette, har vi også tilføje en accent til hvert card, så de skiffter farve
 
 ## 9. JavaScript datastruktur
 
@@ -303,11 +308,33 @@ Ved at anvende localStorage opfylder løsningen kravet om persistens, da brugere
 
 localStorage fungerer derfor som et vigtigt bindeled mellem brugerens handlinger og den dynamiske tilpasning af indholdet i installationen.
 
-## 12. JavaScript bibliotek
+## 13. Centrale valg i udviklingen
+
+Gennem udviklingen af installationen traf vi en række tekniske og designmæssige valg for at understøtte den ønskede brugeroplevelse.
+
+### Tabletbaseret interaktion
+
+Vi valgte bevidst ikke at anvende hover-effekter i interfacet, da installationen er udviklet til en tablet. Hover funktionalitet er primært relevant på computere med mus, mens vores løsning er baseret på touch interaktioner. Vi har lavet active: løsninger istedetfor. 
+
+
+### Adskillelse af brugerinterface og projektion
+
+Vi valgte at opdele installationen i et brugerinterface og et separat projektionsvindue. Dette gjorde det muligt at lade brugeren navigere i indholdet på én skærm, mens videoerne blev afspillet på en anden.
+
+### Carousel som navigation
+
+Vi valgte at præsentere kunstværkerne i en carousel frem for en traditionel liste. Dette gør det muligt at vise flere værker på begrænset plads og skaber en mere interaktiv oplevelse.
+
+### Dynamisk rendering
+
+Vi valgte at generere indholdet dynamisk gennem JavaScript frem for at oprette hvert portræt manuelt i HTML. Dette reducerer mængden af kode og gør løsningen lettere at udvide.
+
+
+## 14. JavaScript bibliotek
 
 Projektet er udviklet ved hjælp af HTML, CSS og Vanilla JavaScript.
 
-Vi har valgt ikke at anvende tredjeparts JavaScript biblioteker, da projektets funktionalitet kunne implementeres ved hjælp af standard JavaScript. Dette har givet os større kontrol over funktionaliteten i løsningen.
+Vi overvejede kort at bruge eksterne JavaScript biblioteker, men vurderede, at projektets behov kunne dækkes med Vanilla JavaScript. Derfor valgte vi at holde løsningen simpel.
 
 Vi har blandt andet arbejdet med:
 
@@ -323,7 +350,6 @@ Disse har gjort det muligt at skabe en interaktiv installation, hvor brugerens v
 > https://github.com/Livrikras/interactive-experience-eksamen-26.git
 
 > Link til GitHub pages:
-
-    https://livrikras.github.io/interactive-experience-eksamen-26/
+https://livrikras.github.io/interactive-experience-eksamen-26/
 
 ![Github](img/github.png)
