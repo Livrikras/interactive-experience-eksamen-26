@@ -1,5 +1,41 @@
 # README
 
+Denne README er skrevet af Anne-sofie Andsager Brandt, som har ansvaret for prototypeovervejelser. Jeg har lavet en figjam fil, hvor jeg går mere i dybden med prototype, ORCA og brugerflow. Linket til figjam ligger i bunden af README og er også linket til i min synopsis
+
+
+## Indholdsfortegnelse
+
+- [1. Validering](#1-validering)
+- [2. Collaborations](#2-collaborations)
+- [3. Web konventioner](#3-web-konventioner)
+- [4. Navne på mapper og filer](#4-navne-på-mapper-og-filer)
+- [5. Fil- og mappestruktur](#5-fil--og-mappestruktur)
+- [6. Navne på variable og funktioner](#6-navne-på-variable-og-funktioner)
+
+- [7. Fremhævet kode](#7-fremhævet-kode)
+  - [7.1 Kodeeksempel 1](#71-kodeeksempel-1)
+  - [7.2 Kodeeksempel 2](#72-kodeeksempel-2)
+
+- [8. ORCA-model](#8-orca-model)
+  - [8.1 Mapping mellem ORCA og JavaScript](#81-mapping-mellem-orca-og-javascript)
+
+- [9. JavaScript datastruktur](#9-javascript-datastruktur)
+  - [9.1 Datatyper](#91-datatyper)
+
+- [10. Kommentarer](#10-kommentarer)
+
+- [11. localStorage](#11-localstorage)
+  - [11.1 Anvendte localStorage-værdier](#111-anvendte-localstorage-værdier)
+
+- [12. Centrale valg i udviklingen](#12-centrale-valg-i-udviklingen)
+  - [12.1 Tabletbaseret interaktion](#121-tabletbaseret-interaktion)
+  - [12.2 Adskillelse af brugerinterface og projektion](#122-adskillelse-af-brugerinterface-og-projektion)
+  - [12.3 Carousel som navigation](#123-carousel-som-navigation)
+  - [12.4 Dynamisk rendering](#124-dynamisk-rendering)
+
+- [13. JavaScript bibliotek](#13-javascript-bibliotek)
+  - [13.1 Links](#131-links)
+
 ## 1. Validering
 
 Vi har brugt "W3C CSS Validation Service" og "W3C Markup Validation Service"
@@ -21,12 +57,12 @@ Vi har brugt "W3C CSS Validation Service" og "W3C Markup Validation Service"
 
 ## 2. Collaborations
 
-- Projektet er udviklet i fællesskab gennem GitHub med i alt ca. -- commits
+- Projektet er udviklet i fællesskab gennem GitHub med i alt ca. 162 commits
 - Vi har arbejdet med push og pull for at sikre en struktureret udviklingsproces
 - Vi har løbende testet og gennemgået koden
 - Vi har delt opgaver ud på baggrund af interesse og kompetencer. Men alle medlemmer har bidraget til idéudvikling, design og udførslen
 
-### eksempler på commits
+### Eksempler på commits
 
 - if else betingelser som tilføjer klasser til kortene
 - ny css fil oprettet for at ændre baggrund på projection.html
@@ -101,7 +137,7 @@ indeholder data om kunstværkerne i installationen.
 ```js
 let projectionWindow;
 ```
-referer til projektvinduet, hvor videoerne afspilles.
+referer til projektionsvinduet, hvor videoerne afspilles.
 
 Vi har konsekvent anvendt camelCase til JavaScript-variabler og funktioner, hvor det første ord skrives med lille begyndelsesbogstav og efterfølgende ord starter med stort bogstav
 
@@ -119,7 +155,7 @@ Det gør koden lettere at læse og forstå
 
 ## 7. Fremhævet kode
 
-### Kodeeksempel 1
+### 7.1 Kodeeksempel 1
 ```js 
 
 // Åbn eller genåbn projektionsvinduet hvis det er lukket
@@ -138,7 +174,7 @@ function openProjectionWindow() {
 Denne funktion åbner projektionsvinduet, hvis det ikke allerede er åbent. Hvis vinduet allerede eksisterer, genbruges det i stedet for at åbne et nyt. Funktionen er central for løsningen, da den skaber forbindelsen mellem brugergrænsefladen og projektionen. På den måde sikrer vi, at brugeren altid sender indhold til det samme projektionsvindue
 
 
-### Kodeeksempel 2
+### 7.2 Kodeeksempel 2
 
 ```js 
 
@@ -173,7 +209,7 @@ Denne kode registrerer når brugeren klikker på et kunstværk i carouselen. Fø
 I vores ORCA-model har vi haft fokus på at skrive objekter der spiller en central rolle i vores museumsinstallation.
 Hvert objekt har en række attributter, der beskriver dets egenskaber.
 
-de centrale objekter:
+De centrale objekter:
 
 - Portræt
 - Lys
@@ -187,7 +223,7 @@ de centrale objekter:
 
 Vi har brugt ORCA-modellen til at definere portrætterne i projektet. Hvert portræt er som et objekt i vores JavaScript, som er blevet lavet i et array. Attributterne bliver til egenskaber såsom kunstner, årstal, materiale, img, videofil og beskrivelse.
 
-### Mapping mellem ORCA og JavaScript
+### 8.1 Mapping mellem ORCA og JavaScript
 
 ORCA-modellen fungerede som grundlag for vores JavaScript datastruktur. Objektet **Portræt** blev omsat til JavaScript objekter i arrayet `artScreen`, mens attributterne blev omsat til properties.
 
@@ -203,8 +239,7 @@ Eksempelvis blev attributter som kunstner, årstal, materiale, beskrivelse og vi
 - `accent`
 
 Denne mapping gjorde det muligt at skabe en tydelig sammenhæng mellem konceptudviklingen, informationsarkitekturen og den tekniske implementering.
-```
-js
+```js
 "use strict";
 
 const artScreen = [
@@ -225,7 +260,7 @@ const artScreen = [
 ];
 ```
 
-Udover dette, har vi også tilføje en accent til hvert card, så de skiffter farve
+Udover dette har vi også tilføje en accent til hvert card, så de skiffter farve
 
 ## 9. JavaScript datastruktur
 
@@ -235,7 +270,7 @@ Hvert objekt repræsenterer ét kunstværk og indeholder alle de oplysninger, so
 
 Ved at samle alle oplysninger ét sted bliver det lettere at vedligeholde og udvide løsningen. Hvis et nyt kunstværk skal tilføjes, kan dette gøres ved blot at oprette et nyt objekt i arrayet.
 
-### Datatyper
+### 9.1 Datatyper
 
 Vi anvender flere forskellige datatyper i projektet:
 
@@ -261,7 +296,7 @@ Anvendes til at udføre handlinger såsom afspilning af video, opdatering af car
 Anvendes som standardværdi, når en værdi endnu ikke er defineret.
 
 
-## 10. Kommentare
+## 10. Kommentarer
 
 Kommentare kan ikke ses på webbrowseren, vi har brugt kommentare til at forstærke læsbarheden af selve koden for andre. Hvilket også har gjort det lettere at samarbejde i gruppen, så alle forstår hvad koden bliver brugt til. De er allesammen på Dansk
 
@@ -300,7 +335,7 @@ let currentIndex = Number(
 
 Ved at anvende localStorage opfylder løsningen kravet om persistens, da brugerens valg kan gemmes og genanvendes under oplevelsen. Dette bidrager til en mere sammenhængende og personlig interaktion med installationen.
 
-### Anvendte localStorage-værdier
+### 11.1 Anvendte localStorage-værdier
 
 - `selectedPortrait` – gemmer den valgte videofil.
 - `carouselIndex` – gemmer brugerens position i carouselen.
@@ -308,29 +343,29 @@ Ved at anvende localStorage opfylder løsningen kravet om persistens, da brugere
 
 localStorage fungerer derfor som et vigtigt bindeled mellem brugerens handlinger og den dynamiske tilpasning af indholdet i installationen.
 
-## 13. Centrale valg i udviklingen
+## 12. Centrale valg i udviklingen
 
 Gennem udviklingen af installationen traf vi en række tekniske og designmæssige valg for at understøtte den ønskede brugeroplevelse.
 
-### Tabletbaseret interaktion
+### 12.1 Tabletbaseret interaktion
 
-Vi valgte bevidst ikke at anvende hover-effekter i interfacet, da installationen er udviklet til en tablet. Hover funktionalitet er primært relevant på computere med mus, mens vores løsning er baseret på touch interaktioner. Vi har lavet active: løsninger istedetfor. 
+Vi valgte bevidst ikke at anvende hover-effekter i interfacet, da installationen er udviklet til en tablet. Hover funktionalitet er primært relevant på computere med mus, mens vores løsning er baseret på touch interaktioner. Vi har lavet active: løsninger i stedet for. 
 
 
-### Adskillelse af brugerinterface og projektion
+### 12.2 Adskillelse af brugerinterface og projektion
 
 Vi valgte at opdele installationen i et brugerinterface og et separat projektionsvindue. Dette gjorde det muligt at lade brugeren navigere i indholdet på én skærm, mens videoerne blev afspillet på en anden.
 
-### Carousel som navigation
+### 12.3 Carousel som navigation
 
 Vi valgte at præsentere kunstværkerne i en carousel frem for en traditionel liste. Dette gør det muligt at vise flere værker på begrænset plads og skaber en mere interaktiv oplevelse.
 
-### Dynamisk rendering
+### 12.4 Dynamisk rendering
 
 Vi valgte at generere indholdet dynamisk gennem JavaScript frem for at oprette hvert portræt manuelt i HTML. Dette reducerer mængden af kode og gør løsningen lettere at udvide.
 
 
-## 14. JavaScript bibliotek
+## 13. JavaScript bibliotek
 
 Projektet er udviklet ved hjælp af HTML, CSS og Vanilla JavaScript.
 
@@ -346,6 +381,7 @@ Vi har blandt andet arbejdet med:
 
 Disse har gjort det muligt at skabe en interaktiv installation, hvor brugerens valg påvirker det indhold, der vises på projektionen.
 
+### 13.1 Links
 > Link til GitHub Repository:
 > https://github.com/Livrikras/interactive-experience-eksamen-26.git
 
