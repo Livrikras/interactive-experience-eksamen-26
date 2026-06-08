@@ -395,23 +395,34 @@ I vores projekt har vi undervejs brugt AI som et digitalt værktøj til at samar
 * __Moodboard og inspiration til storyboard:__ Vi har brugt ChatGPT til at teste vores ide, hvor vi har fået chatten til at visualisere vores installation i rummet, samt give en lidt mere specifik vibe og følelse til moodboard. Dette gør det nemmere for vores BERT testpersonerne at få fornemmelse for installationen. https://chatgpt.com/share/6a267f9b-28d4-83ed-98c4-4a640d3f6226 (Link hentet: 8/6/2026)
 
 * __Billeder til designoplæg:__ Vi har brugt Higgsfield og Weavi.ai  til at genere billederne til vores designoplæg, hvor vi viser et mere detaljeret overblik over oplevelsen. (Med Higgsfield og Weavi.ai, kan vi ikke linke til chatten, da det er en privat account. Derfor har vi tilføjet billeder ind i stedet)(Sat ind d. 8/6/2026)
-![ai-billede, vores installation](img/ai-billede-1.png)
+
+>![ai-billede, vores installation](img/ai-billede-1.png)
 ![ai-billede,vores-installation](img/ai-billede-2.png)
 ![ai-billede-installation](img/ai-billede-3.png)
 ![ai-billede-installation](img/ai-billede-4.png)
 
 __Prompts:__
-![prompt-til-ai-billede](img/ai-billede-5.png)
+>![prompt-til-ai-billede](img/ai-billede-5.png)
 ![prompt-til-ai-billede](img/ai-billede-6.png)
 ![prompt-til-ai-billede](img/ai-billede-7.png)
 
 
-* __Engelske voiceover og baggrundslyde:__ Vi har brugt 11Labs til at genere engelske voiceovers, i stedet for at indtale dem som vi har gjort med de danske. Med 11Labs har vi brugt forskellige stemmer til at give den rette stemning for hver kunstner. Vi har også brugt 11Labs til at lave baggrundsmusik og effekter til de danske voiceovers.
-![prompt-til-ai-video](img/ai-billede-8.png) Ash - voice id: m3yAHyFEFKtbCIM5n7GF
-![prompt-til-ai-video](img/ai-billede-9.png) Ash - voice id: enI44SIiQ2GsKAhWRSpZ
-![prompt-til-ai-video](img/ai-billede-10.png) Ash - voice id: wVOQaU8CfoRJqCWsxoLv
-![prompt-til-ai-video](img/ai-billede-11.png) Ash - voice id: 0c14Fsfhfnl8M9pCB5pf
-![prompt-til-ai-video](img/ai-billede-12.png) Billeder hentet ned: 8/6/2026
+* __Engelske voiceover og baggrundslyde:__ Vi har brugt 11Labs til at genere engelske voiceovers, i stedet for at indtale dem som vi har gjort med de danske. Med 11Labs har vi brugt forskellige stemmer til at give den rette stemning for hver kunstner. Vi har også brugt 11Labs til at lave baggrundsmusik og effekter til de danske voiceovers. (Billeder hentet ned: 8/6/2026)
+
+>Ash - voice id: m3yAHyFEFKtbCIM5n7GF 
+>>![prompt-til-ai-video](img/ai-billede-8.png)
+
+>Ash - voice id: enI44SIiQ2GsKAhWRSpZ 
+>>![prompt-til-ai-video](img/ai-billede-9.png)
+
+>Ash - voice id: wVOQaU8CfoRJqCWsxoLv 
+>>![prompt-til-ai-video](img/ai-billede-10.png) 
+
+>Ash - voice id: 0c14Fsfhfnl8M9pCB5pf
+>>![prompt-til-ai-video](img/ai-billede-11.png) 
+
+>Baggrundslyde:
+>>![prompt-til-ai-video](img/ai-billede-12.png)
 
 Vi har brugt AI som både en samarbejdspartner men også til at designe lyd osv. som skulle bruges i vores installation. AI hjælp og lyde er blevet tilpasset, testet og redigeret i, så vi har fuld forståelse og intention for alt hvad vi har sat ind.
 

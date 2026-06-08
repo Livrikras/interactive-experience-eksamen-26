@@ -293,10 +293,6 @@ function updateCards() {
       card.classList.add("next"); // foran
     } else if (diff === cardCount - 1) {
       card.classList.add("prev"); // bagved
-    } else if (diff === 2) {
-      card.classList.add("next-right"); // 2 til højre
-    } else if (diff === cardCount - 2) {
-      card.classList.add("prev-left"); // 2 til ventre
     } else {
       card.classList.add("hidden"); // andre kort er skjulte
     }
