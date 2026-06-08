@@ -395,6 +395,15 @@ I vores projekt har vi undervejs brugt AI som et digitalt værktøj til at samar
 * __Moodboard og inspiration til storyboard:__ Vi har brugt ChatGPT til at teste vores ide, hvor vi har fået chatten til at visualisere vores installation i rummet, samt give en lidt mere specifik vibe og følelse til moodboard. Dette gør det nemmere for vores BERT testpersonerne at få fornemmelse for installationen. https://chatgpt.com/share/6a267f9b-28d4-83ed-98c4-4a640d3f6226 (Link hentet: 8/6/2026)
 
 * __Billeder til designoplæg:__ Vi har brugt Higgsfield og Weavi.ai  til at genere billederne til vores designoplæg, hvor vi viser et mere detaljeret overblik over oplevelsen. (Med Higgsfield og Weavi.ai, kan vi ikke linke til chatten, da det er en privat account. Derfor har vi tilføjet billeder ind i stedet)(Sat ind d. 8/6/2026)
+![ai-billede, vores installation](img/ai-billede-1.png)
+![ai-billede,vores-installation](img/ai-billede-2.png)
+![ai-billede-installation](img/ai-billede-3.png)
+![ai-billede-installation](img/ai-billede-4.png)
+
+__Prompts:__
+![prompt-til-ai-billede](img/ai-billede-5.png)
+![prompt-til-ai-billede](img/ai-billede-6.png)
+![prompt-til-ai-billede](img/ai-billede-7.png)
 
 
 * __Engelske voiceover og baggrundslyde:__ Vi har brugt 11Labs til at genere engelske voiceovers, i stedet for at indtale dem som vi har gjort med de danske. Med 11Labs har vi brugt forskellige stemmer til at give den rette stemning for hver kunstner. Vi har også brugt 11Labs til at lave baggrundsmusik og effekter til de danske voiceovers.
