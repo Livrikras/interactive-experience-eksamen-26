@@ -34,7 +34,11 @@ Denne README er skrevet af Anne-sofie Andsager Brandt, som har ansvaret for prot
   - [12.4 Dynamisk rendering](#124-dynamisk-rendering)
 
 - [13. JavaScript bibliotek](#13-javascript-bibliotek)
-  - [13.1 Links](#131-links)
+
+- [14. Brug af AI-værktøjer](#14-brug-af-ai-værktøjer)
+
+- [15. links](#15-links)
+
 
 ## 1. Validering
 
@@ -381,17 +385,6 @@ Vi har blandt andet arbejdet med:
 
 Disse har gjort det muligt at skabe en interaktiv installation, hvor brugerens valg påvirker det indhold, der vises på projektionen.
 
-
-### 13.1 Links
-> Link til GitHub Repository:
-> https://github.com/Livrikras/interactive-experience-eksamen-26.git
-
-> Link til GitHub pages:
-https://livrikras.github.io/interactive-experience-eksamen-26/
-
-![Github](img/github.png)
-
-
 ## 14. Brug af AI-værktøjer
 I vores projekt har vi undervejs brugt AI som et digitalt værktøj til at samarbejde og vejlede under forløbet. Vi har til projektet brugt ChatGPT, Higgsfield, 11Labs, Weavi.ai og CoPilot (VScode)
 
@@ -408,3 +401,12 @@ I vores projekt har vi undervejs brugt AI som et digitalt værktøj til at samar
 
 
 Vi har brugt AI som både en samarbejdspartner men også til at designe lyd osv. som skulle bruges i vores installation. AI hjælp og lyde er blevet tilpasset, testet og redigeret i, så vi har fuld forståelse og intention for alt hvad vi har sat ind.
+
+### 15 Links
+> Link til GitHub Repository:
+> https://github.com/Livrikras/interactive-experience-eksamen-26.git
+
+> Link til GitHub pages:
+https://livrikras.github.io/interactive-experience-eksamen-26/
+
+![Github](img/github.png)
