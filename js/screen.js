@@ -427,7 +427,7 @@ function setLanguage(language) {
 
     document.querySelector(".back-button").textContent = "← Back";
 
-    document.querySelector(".gallery-title").textContent = "All paintings";
+    document.querySelector(".gallery-title").textContent = "the anonymous collection";
     document.querySelector(".section-title").textContent = "Featured paintings";
     document.querySelectorAll(".story-btn").forEach((btn) => {
       btn.innerHTML = `
@@ -454,7 +454,7 @@ function setLanguage(language) {
 
     document.querySelector(".back-button").textContent = "← Tilbage";
 
-    document.querySelector(".gallery-title").textContent = "Alle værker";
+    document.querySelector(".gallery-title").textContent = " De anonymes samling";
 
     document.querySelector(".section-title").textContent = "Udvalgte værker";
 
